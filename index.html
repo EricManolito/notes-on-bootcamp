@@ -450,7 +450,7 @@ searchability = Foreign Key; Attribute = Category ID (fk), tAG ID (PK) <br> Post
  is two problems, regular problem and another problem; Claude assist, regex 101 site, google send, find and replace regex JavaScript
  with variables. <br>10:50 am George stop on lesson / regex that f & r javascript with variables and capture characters <br>
  * easiest fix is delete comma after bear, <-- that comma <br> random anagram answer now = 9 iterations with function while (characters
- left); - 9 interation isn't enough/ Fisher Yates work through --> fetch <br> Lunch Break 12 - 1:00pm <br> function randomize show ()
+ left); - 9 interaction isn't enough/ Fisher Yates work through --> fetch <br> Lunch Break 12 - 1:00pm <br> function randomize show ()
  don't write code like that due to time complexion <br> Fetch json placeholder site has some code but not all; -we're going to use alot
  of .map(); map vs. filter vs. reduce <br> map = animals, cook, food / filer = food, vegetables, fries, popcorn / reduce = food, eat, poop
 <br> Break 1:38pm - 1:50pm <br> TypeScript: start with YouTube video / everything we write in Capstone will be TypeScript --> PWP
@@ -463,37 +463,573 @@ console.log(student) lowercase I may get both students. George will commit and p
 <h2>October 9th, 2025 Zoom Meeting  8:15 am Stand Up, CHeck In - what you've working on, if you have roadblocks</h2>
 <p>* start with video React history 2014-2020 nominal change but gradual with React Router 7 and combination of Next.Js <br> 'astro'
  George recommends for making blog over wordpress <br> Angular - big beefy  React - needs resources, but quick  / JQuery, still top dog
- > comic view <br> React is most commonly used in today's apps. <br> - combine HTML, CSS and Javascript to be react. <br></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
+ > comic view <br> React is most commonly used in today's apps. <br> - combine HTML, CSS and Javascript to be react. <br> component:
+ reuseable, self-controlled chunk of UI, includes mark up and business logic. example = visual in lecture note <br> function yay() {
+ const text = 'yeah man'   / classname instead of class  /  return (h1 className = text-3xl font-bold / example on codesandbox.io/p/
+sandbox search React/ underline > {text} all toward h1 <br> JSX similar to HTML, George example saved as child.tsx; 9 component created
+ in JSX is Child/ code, no HTML element exists like this <br> Break 9:00 - 9:15 am <br> React component can use function syntax or class
+ syntax. function yep(props) { return ( div, h1 hey there {props.name}!h1 div );} <br> with const yep = ({name}) => { div, h1 hey there
+ {name}! h1 div ); Arrow function syntax <br> class syntax is covered in example. * component in the end, are functions <br> props =
+ a way to pass parameter to components "data" <br> * example undefined is logged in because truthy/falsey, undefined = 0 = false
+ . You are, not logged in is ran <br> Objects, arrays, Boolean other component pass into { ---} on main tsx page <br> Conditionals &
+Events: if statements with JSX return output, --> rendering allows for rendering/displaying different UI elements or components based
+ on conditional. <br> event: React handles user events similarly to HTML DOM events, but with syntax differences; --> event handlers
+are camelCase, like all attributes, and take a function expression as an argument. <br> - George cut out portion of code and
+ kept return with variable remove and code ran with button key pressed <br> * for Bootcamp only functional components, no class components
+ - if you see class component online, shut down that link/page/documentation/directory <br> State Variable = data & memory <br>
+ --> in programming is data that can change over time and effects how your program behaves. example -> light switch up and down
+ state changes which change's the light's behavior / user input, UI state, Data from servers, App status <br> Break 10:08 - 10:20 am
+<br> Use state() const [externalData, setExternal Data] = useState() <br> array & object destructuring doing alot new method front and back end
+<br> 'It's just cleaner' / like with Props to then have type props --> function variable (rf) & more ternerary functions <br> side effect -
+something that effects the outside of component function / DOM manipulation past couple days <-- left jAVASCRIPT to effect HTML <br>  useEffect
+ is to be utilized for creating a 'quarantine zone' for side effects; Typescript is protected write time, not at run time <br> Great example
+= in lecture! // 1:00pm Marty on lecture, host in Zoom. React challenge ; to do assignment, due Tuesday (10.14.25) <br> when return later
+ run cd frontend then <br> Ctr + Shift + F home appears <-- when in localhost: 5173 <-- npm run dev <br> - find in files learn this
+ command **** <br> flowbite - react.com for find navbar, 'card' copy and right click and code to ok the insert/import from flowbite-react
+<br> Control Shift Alt L // Break 2:15 - 2:30pm <br> got solid syntax for about page to link up / img tag need to have closing at end, class
+ to be className // div within image and text Control F search bar class replace with className <br> 1 once and bring in 4 times as
+ component like nav bar example ; code img src = 'https://placeholder.co/600' alt='placeholder' end code <br> How in react-router do
+I bring an image in to project? <br> 3:15pm Breakout rooms open; LeighAnn in room 4:04pm</p>
+<h2>October 10th, 2025 Breakout room meeting right off 8:00am </h2>
+<p>Break 9:45 -10:00 am React challenge and PWP starter work</p>
+<h2> October 13th, 2025 Indigenous Peoples' Day </h2>
+<p>Git branching --> conversation on merging (pushing code at some time); - shared PDF file of git workflow <br> --> only merge branch
+ when code works ; develop makes develop branch only after git checkout main and git pull are done <br> * do in git bash * <br> Eric and Blu
+ do in person lab <br> Break 9:09 - 9:25 am <br> github - compare and pull request between appears after git push on to github repository
+ <br> Break 10:15 - 10:25 am <br> 10:39 am = React challenge must be cd/ frontend (necessary) while in gitbash; - after frontend, run npm run dev
+ function - camelCase; components - pascal case // file routing with images, house images in public folder <br> 12:06 PM lUNCH - 1:05 PM
+<br> George presentation Sprint 2: Capstone - creating static front-end <br> - adding data to Capstone to see flow for conceptual
+ model / ERD by Tuesday (tomorrow) <br> * tix creating concept model & ERD needed ASAP <BR> * ALSO A CODING-exercise with TypeScript
+<br> - React Spin up instructions to do    | Sprint 2 due October 24-25 = also Travis visit | <br> Srilatha to do React Spin up,
+LeighAnn walk through of wireframes relative in develop branch now, to upload in main later <br> 2:11 pm review with Marty on Conceptual Model
+ after working to add more entitities-attributes. Location discussion saved at 'string, NM 87104' & latitude/ longitude <br> Post,
+ do we have a post edit page? <br> 10 medias per post (realized in Marty talks); lost on 7 tables to bring project to 6 tables
+ to work with (we we're/are ambitions) <br> 1 image/post 1 image/bucketlist > an option, or multi images posts/bucketlist option?
+ <br> Break 3:51 - 4:11pm <br> Claudette to work on ERD example of table profile</p>
+<h2>October 14th, 2025  8:02 am Marty on Zoom link, Stand up meeting</h2>
+<p>Code Along = Destructuring directory created / Object destructuring order doesn't matter / Array destructured order matters!!!<br>
+Break 8:47 - 9:05 am <br> pizza.tsx export funtion Pizza({pizza} : {pizza:PizzaType}) / first {pizza} is an object, pizza:PizzaType
+ defines type, complex thing on the left of : <br> 9:33 am = Pizza.tsx work on object destructuring / Marty put pizza files into github
+, will need to clone and compare in your code functions. <br> 9:53 am = worked github changes into code to work from yesterday's creation
+ of Pizza Page and pizza 'card'.tsx <br> 10 am-ish = Capstone work time, ERD flow <br> 1:31pm Bucketlist to go to post<br> 1 post
+ can have many medias = ref media: media.postID > posts.postID <-- Profile = activation token needed in char32 <br> 1 post can have
+many comments = ref comment: comments.postID > posts.postID <br> * less typing following is now follow <br> 1:46 pm = go through attribute
+ names to be sure you are satisfied * ORDER of attributes matters for SQL. Primary Key --> Foreign Key --> others in alphabetical order
+<br> * SQL = snake case all lowercase and underline between words (npm format will do for us), table names all either singular or
+ plural. Add alt TO MEDIA, now to submit as a  ____ <br> Break 2:18 - 2:34 pm <br> 2:39 pm = TIX - How we do branding, or front end pages
+ > we each do a page for frontend. Home Page, Profile Page, Gallery, com./inspiration combined components > footer, header(navbar) <br>
+ alternative logged in nav, registration page <br> 0 wireframes model to home(Srilatha), Profile (LeighAnn), Gallery (Claudette),
+ components (LeighAnn), registration (Claudette). Frontend > app > routes home.tsx has home as h1, routes.ts import your HTML pages here
+. - new directory called home</p>
+<h2> October 15th, 2025</h2>
+<p>Frontend directory has package.json to do npm run dev. React Challenge, bucketlist, PWP. <br> * bot builds with javascript package
+ to build HTML to display in localhost; walk through on react code to show tailwind details or styling<br> - bottom section, Marty used
+ grid (flex flex-col md: flex-row), I used flex; grid grid-col md: grid:col-2 lg: grid-columns-4 * experiment adding lg & xl <br>
+8:51 am Marty work on 4 cards to be like pizza cards. code repeating 4x 'wet', needs to be dry! <br> export function(Team) { // on team.tsx
+ created for 'team" - code of these img, p in = div set here} | inside home.tsx insert code Team. self closing tag done 4 times in section
+<br> Pictures, by CNM Ingenuity - - - 9:01 - 9:40 am  9:47am start back up on React Challenge <br> * after export default function HOME() {
+ const Pizzas:Pizza[] = [{ all pizzas information}] / before return (---)   array of objects   image: ----, anme: ---- <br> in
+JSX Marty put pizza code {pizza.map(pizza) => code Pizza pizza = code Team member = {pizza[0]} / when this line replaced here it runs pizza
+{pizza} / hot air balloon - BallonFiesta8.jpg <-- real use example of component to build out for scrapbook <br> image and name of pizza
+ into card area <br> 10:07 am = making footer component > named custom-footer.tsx --> file name <br> - inconsistent case of naming files, tags, etc.
+<br> - default to Kabob for files <br> * export function CustomFooter() { return ( code footer ---, p, p -main.tsx placing code CustomeFooter )}
+<br> below the routes <br> const pizzas: Pizza() Typescript, in () import type Pizza // pizza component has import type {Pizza} <br> Break
+10:41 - 11:00 am <br> export type Pizza = {image: string name: string} <-- like const pizzas, variable layout. <br> Break 3:25 -3:40 pm</p>
+<h2> October 16th, 2025  Snap-Challenge / SQL</h2>
+<p>8:56 am George review challenge, it does have a many to many table. * can be many to many = user - project, user - ticket <br> user -> project =
+ status --> ticket status; user -> ticket = status --> ticket status <br> with status, ticket status, ticket is many to many <br> Break 9;05 -
+9:25 am <br> 9:28 SQL  database - when we store data for our apps, really just a file system, But post GRES gives us some special indexing
+ capabilities. POST GRES = the program that stores our data and manages our database. <br> * we will use Redis, more as just using some
+ features. Postgres and MySQL comparison via Claude Code input. - we will use relational databased, used alot in Albuquerque <br> SQL lesson
+ starts recording <br> SQL each 'record' gets a unique Primary Key, Foreign Key exists too. * Noted not table, but an index for author
+ ' a special author created a specific article', 1 - 1 ? relationship. <br> json placeholder website for sample codes and infomration to review
+<br> SQL - datatypes matter much more, than in Javascript. --> UUID, char, varchar, text of strings. UUID as Primary Key. 10:30 am after Claude
+use and Marty input. <br> DataType = char fixed length string, varchar is variable length strings, text is string without artificial limits. <br>
+ example: char(8) = FUZZY---,comparison generated content /  varchar(8) = FUZZY(null), use for human created input! <br> text = no use in
+ Capstone because of unknown size of input. 160 characters as placeholder = SMS text full amunt for 1 text
+    <br> POSTGRES = Numeric Values = 10 different numeric data types. small int, integer, big int, decimal, numeric, real, dbl-precision, small
+ serial, serial, big serial <br> example of numeric = (5,2) --> 333.33, 5 value spots, 2 for decimal. / 32768-32767 -10th = 10 numbers.
+    small int -> 2 bytes, integer -> 4 bytes, big int -> 8 bytes <br> Data and DataTime = begin of time is 1970-01-01 00:00:00 UTC (Europe, London)
+ 13 digits of millisecond since UNIX time. <br> UTC, Date, Time, Year (avoid SQL only store) => 1980 - use small int. Claude Code says 1901-2155
+ Time Stamp T2 = data and time combined with the time zone <br> INDEXES = speeding up search in a database for special columns. Expensive for the
+database and should be used sparingly; only be used on columns that rarely change and are used for comparisons in joins --> take 2 tables to find
+ matching search. example => George searches all tweets of Mark Ericson, Vite, and Ryan Douglas in X. Index only are Foreign keys; Primary Key are
+ index autotunes really. --> Foreign Key, maybe email (Index email for log in) <br> Break 11am - 1:00pm <br>  1:14pm  STARTING ON THE BACK END with
+SQL Challenge. <br> - we have virtual server/ cloud now <br> - much Webstorm install work to link up to our own mini servers <br> Break 1:52pm - 2:05pm
+<br> 2:10 pm SQL Insert, Update, Delete, Select, Joins <br> snake_case with tables and attributes. with Post gres __ <--underbars <br> UUID v7 George
+ got for us and in Slack too <br> argon2 has = like uuid v7 site but for hash. * INSERT demo exact number values for error on syntax of W and then
+ fixed with author_id from above INSERT // : semicolons needed after INSERT line <br> UPDATE: Update author set, author_activation token => 32 characters
+length ; UPDATE Delete George modules. WHERE author_id = '-----' <br> JOIN --> combine 2 tables together to find information in each <br> SELECT 2 75
+| INSERT 5 15 | UPDATE/DELETE 1 7.5% | 1 === SQL Challenge --> due Tuesday (10.21.25)</p>
+<h2> October 17th, 2025 Start with Breakout rooms</h2>
+<p>8:05 - 10:30 pm work on Capstone <br> Break 10:33 - 10:50 am <br> 1 pm Fran Fernandez prsentation on Zoom www.nmsbdc.org <br> sbdc@cnm.edu 505-224-5250
+<br> Xavier: Activate NM / find and follow on LinkedIn</p>
+<h2> October 20th, 2025 </h2>
+<p>HTTPS = hyper text transfer protocol; secure <br> https:// many get request to load webpage. HTTP - look at http.cat for code
+errors with cats.  Digital Ocean makes ocean droplet = Eric own server. eric.ddfullstack.cloud or 159.65.101.60 <br> ?param1 = hello and param > world
+ --> file.html <br> Seen on URLs' Anatomy of a URL (8:44 am continued) <br> REST APIs - representational state transfer/ universal design pattern for
+ communication between servers. <br> HTTP request methods (dmo site, 8:54 am) --> back to HTTP cats site  create update real/retrieve delete = = = CRUD
+<br> MERN PERN SQL - Post gres <br> Break 9:09 - 9:30 am <br> 10:36 am 'we first build our first back end" <br> 1:13 pm back in lab Open Work Time, reviewed
+     Personal Webpage Project (PWP) for Milestone 3/p>
+<h2>October 21st, 2025 8:00 am Stand up for all</h2>
+<p>AMA session for 30 minutes to see if Nick lesson will be at 9am. AMA is Ask Marty Anything <br> Break 8:28 am - 8:45 am; Nick lesson resheduled for
+later, 9:30 am <br> 9:30 am different Zoom link - Nick Lesson on data design --> up to 11:00 am <br> lower_snake_case, singular not plural <br> 1:00pm
+ Zoom: SQL Challenge<br> insert statement, all statement when done end with semi colon; <br> * George doesn't like use of * <br> Select article
+, article FROM / run code top left area of screen triangle run button // 5 article attributes <br> article INNERJOIN entity ON entity.----id =
+ entity ____id WHERE entity_____id <br> 10.21 1:25pm dont use *, but full attribute <br> Database hit refresh icon, highlight table and hit triangle button
+<br> 3:00 pm Capstone Project colors for layout   Blue > calmness, stability / Orange > energy, warmth, enthusiam / Red > passion, energy,
+excitement / Purple > creative <br> color.adobe.com - for color testing <br> Break 3:23 - 3:48 pm <br> 4:50pm Themes = colors, text sizes to work on
+, Font families // adobe fonts or google fonts //   & pre-work Khan Academy , sqlbolt.com to learn and practice</p>
+<h2>October 22nd, 2025 George goes through SQL- Challenge</h2>
+<p>- example has no table prefixes = example: profile_id = id / id UUID not null, email varchar(128) not null, unique (stops people with same
+     email/ about_me varchar(256) , activation_token varchar (32) <br> NOT NULL = 'must be set for table to exist' hash char (97) Not Null
+    name varchar (48) * no prefixes PRIMARY KEY (id) <br> - only run drop table in development <br> top area DROP TABLE profile; CREATE TABLE
+IF NOT EXISTS ( *software developer gets development database, not production database profile <br> - next table project: due_date TIMESTAMPTZ -->
+TZ added on/ name VARCHAR(64) not null/ PRIMARY KEY (id) Foreign Key (profile_id) reference <br> Break 9:26 - 9:40 am <br> Claude  organic
+ algorythm that creates hash, - create a fake 97 character argon2 hash <br> 9:44am copy all, then run <br> Break 10:24 - 10:35 am <br> 2
+ virtual machines like ddc.web.student.edu and other have been used so far in bootcamp (digital ocean, droplet(s))  - research DOCKER videos
+ too, along with SQL videos / Docker in 109 seconds, virtual machine vs. docker <br> Docker: containers / OS / images / blue print for container
+ <br> --> mini virtual machines running in isolation ( can run x amounts) Node > backend,  node> frontend , postgres> hold data reddit> handle session
+ reverse proxy > for communicating for the session/service? 5 containers <br> DONT COMMIT & PUSH 11:20 am docker-in-class stuff <br> most imp
+ command for us is copy public_html var/www/html <br> docs.docker.com = lists many commands, copy, run, From comma are where we will use in bootcamp
+<br> docker -- help to get common commands   eric.ddfullstack.cloud in browser <br> 1:10 pm Open work/ Sue meetings  arrow button on each end of photos
+to scroll through photos of that section = travel, learning, etc. </p>
+<h2> October 23rd, 2025</h2>
+<p>Title: Wander List // Wanderlust  checkins <br> Docker-in-class start back up -- must be in droplet to do terminal work / emanolito@eric.ddfullstack
+<br> cloud: 22 <br> Break 9:01 - 9:10 am  container orchestration = docker compose <br> - you rarely run 1 container at a time, often more then 1 container
+at a time <br> Capstone = 5 containers for the application / redis postgress, node backend and frontend, reverse proxy <br> - we used docker compose to
+ start up sql-challenge <br> Docker Volumes - persistent data store containers, created and managed by Docker; 2 types of volumes with docker:
+-- name volumes and bind mounds (docker_docs.uclv.cu/storage/----) <br> - inside SQL-challenge docker-compose.yml <br> Bind Mounts - 4 files that
+ we manage and control <br> Volume, bind mount of data run, after container is made, after image is created <br> --> so we set files here once image
+ --> container are made <br> reddis and postgres access needed to make backends, these specifically <br> YAML - yet another mark up language, George
+ took practice Capstone YAML and connect to json via Claude Code. <br> - use spaces and indentation to specific blocks <br> - use # for comments
+<br> - string use single quotes, double quotes (match front and end string), or no quotes <br> url command line url > in webstorm use, not in shell command line
+<br> ping = checks if 'something' is live; example ping google <br> Bind Mount/ Volumes  Away From Computer 11am - Lunch 12:00pm <br> PWP - Milestone 4
+ 2 weeks from today (Nov. 6th) <--tentatively set <br> 1:00 pm experiment with the backend <br> Express Code Along = more complex, then intro-to-express
+lesson. app.ts line 8 export class App (only time we'll use in class) / 1:24pm Terminal, npm install, npm update <br> right click > deployment > upload to
+express code along  * eric has no s in express code along <br> Break 1:53 - 2:05pm restart webstorm shut down via Task Manager <br> import type
+ {request} from "express" <br> 2:22pm export async function ' -----(request:Request, response: Response) { response.join({status:200, message
+: null, data:[]}) <br> Break 3:01-3:15pm  Zod introduced https:// zod.dev <br> * we created a REST API with a tag <br> * quick break --> Breakout Room
+for Capstone work <br> Leighann share on her work, icons in a folder (figma.com has code for icons) <br> - after Sprint 2 merge into main branch
+<br> react Flowbite icons exists too </p>
+<h2> October 27th, 2025</h2>
+<p>Marty lecture on react-challenge to show files walk through , review of CONTROL FLOW DIAGRAM created <br> - introduced to asyng await >
+better way to handle a promise <br> last week created controller > route > sql <br> ---> this week reverse SQL > route > controller <br> model >
+interacts with database    view > Json we return <br>   controller is how model is interacted with   <br> React has built in protectors ran HTML, CSS,
+Javascript data/code must be sanitized, makes clean can be malicious <br> Break 9:50 - 10:10 am  10:15 am Insomnia downloaded and installed <br> choose
+ github ---- installation  <br> - working tag controller.ts comments to show what is happening <br> - added .post(postTagController) in tag.route.ts within
+ router.route('/') .... here <br> 10:37 am droplet server time (like ls) docker ps, docker compose logs -f <br> express challenge will use new folder
+ in Insomnia (reveals logs of attempted accesses) Filter new between right of section. <br> GET http://eric.ddfulstack.cloud:8080/apis/tag <br>
+ --> has url data <--get data <br> Post request has 'bodies' <-- send data <br> {"id" ; 'dddd'} error with message, {'zid': '----UUIDv7'}
+<br> 11:43 am clean/chose function via tag controller.ts  export async function get TabById <br> Break 11:12 -11:25 am <br> plural - plural objects,
+mulitple objects  // single - single object    LUNCH 12 - 1:00PM <br> 1:10pm George --> Insomnia  name change in tagcontroller.ts <br> getTagByIdController
+  tag.route.ts = router.route('/id').get(getTagByIdController)   /name/can > terminal  INsomnia cannot get apis/tag/whatever <br> /: 'variable' => /:id
+<br> npm i = npm install  <BR> BREAK 2:58 - 3:10 PM  // Linnex mINT VS. Kbantum  Reed device   Marty recommends</p>
+<h2>October 28th, 2025  Remote Day / Stand up Meeting / Denise issue with OneDrive transfer, talk to if happens to me</h2>
+<p>* extreme code along!  1 person of the team to code along; pair programming, no auto complete huge chunks of code / Today we make sign-up
+ API code! <br> Profile table, bio can be null and Bucket List has bio <br> Vault Team, no bio in their profile table <br> * need database
+ and profile table / react component not working in frontend, needs review to work <br> Chat GPT > 2-3 description lines to put into scrapbook
+<br> title can have icons with it <br> export type Photo---- / div_slider.tsx  icon = imageSrc  lines 42-70 change icon to/ or imageSrc
+<br> const photoList = props.photo <br> 8:15 - 9:30 am Bucketlist Breakout Room <br> Break 9:37 am - 9:50 am <br> env. go to Website and
+ get password/replace in password-env file / * we all do this <br> Away From Screen - 11am, 12 - 1:00pm Lunch /  Sharing Screen <br>
+ Teammates, change password; set to droplet, run wanderlist.sql <br> API - AP interface --> how world connects/communicates with our website
+<br> 1:40pm LeighAnn left room <br> Marty talk on Front End . BackEnd / Insomnia - jason body information of what tag we created, the sent to specific
+address <br> no password storage in database, but a hash(password_hash) / 27 Marty divide by 3 = 9 remainder 0 , 20 Eric divided by 3 remainder 2
+<br> - can't store numbers in database, but need to verify number return as password <br> modulous operation - finding remainder values when letter
+ characters have a number value. cat's name and daughter's birthday = same 97 characters <br> value = hashing one-way street, can't go
+back in finding specific values <br> Sign up = must haves, password confirm field / 4fields > passwords, password confirm --> validated in Schema,
+    so George says not need, email and username <br> Json body houses password to not be seen in url (Amazon example) <br> post request
+ has json body, get request has url information that can be seen <br> Break 2 - 2:15pm <br> Who's going to be typing - Denise,Eric <br> request.body
+ <-- json body in Insomnia <br> sign-up.controller.ts <br> values = JS camelCase activation token, tables/database activation token / sign up
+ Profile Schema. safeParse (request body) <br> Alt + tab (full screen changes to other 'full screen') , snake_case <br> Ctr + Shft + Alt + L =
+ reformats your code </p>
+<h2>October 29th, 2025  EXTREME CODE ALONG Denise/ OneDrive problems to desktop</h2>
+<p>Break 9:26 - 9:40 am Pick Back up <br> 11:16 - 11:30/40 am George with Denise OneDrive work <br> RDaJ!z^x$mZox1E5 <br> 3:28 pm Sprint 3 extreme
+ code along, new person to go on with process for Capstone * check off spin up <br> create a sign up Rest API all team must sign up and get email
+ of profile completion process <br> REST API HTTP  put new information into Profile = edit the profile (human language) > CREATE REST API =
+send points <br> PUT(edit), GET, POST(create) & DELETE --> wanderlist items that can be deleted <br> GET Post by router.id</p>
+<h2>October 30th, 2025 8:04am  Stand Up, no Denise, LeighAnn @ 8:10 am</h2>
+<p>- don't use DaisyAI in PWPW <br> EXTREME CODE ALONG <br> Break 9:44 - 10:00am LeighAnn on at 10:35 am <br>  add/commit/push same time in develop
+ branch <br> 10:55 am Away From Screen 12-1pm Lunch  back in Zoom <br> Post Wanderlist (get All Wanderlist), Put Wanderlist (get All Foo), Delete
+ Wanderlist (get Individual Wanderlist) <br> Posts get/Post/Delete  <br> LeighAnn sign up / sign-in (process to do) <br> 2:52 pm Break - 3:05pm <br> 3:23pm
+ noted Ctr C was being done <br> 3:30 - 4:30 pm list out REST API with a navigable route for entity <br> Wanderlist: tables Profiles, Wanderlist, Post, Following
+ comment, media</p>
+<h2>October 31st, 2025  8:10 am  Conference Room</h2>
+<p>* set Required Endpoints for wanderlist.sql <br> Wanderlist = get/insert/get/delete/ update/ get Visibility <br> Post = get/ post (insert)/ get
+/ get/ delete/ update/ update <br> Following = get/get/delete/delete/ update/update <br> Comment = get/insert/get/get/get/delete/update <br>
+Media = get/insert/get/get/delete/update <br> Wanderlist ==> need more:  and few more AIs for Profile <br> Following change to Follow (Marty recommends
+ and discusses on Followed/Follower <br> Break 9:30 - 9:45 am <br> profile.controller.ts safeParse (request.param) not request.body <br> - passing insomnia
+, but data is null. Data should have id information <br> Break 11:32 - 11:47 am <br> line 18-22 built profile Controller .pick({id:true}) .safeParse (request.
+params) / line 33 const profile = await getProfileByPrimaryKey(id)  <br> email js.com   Contact Service contact_service <br> Professional Development
+: AI Claude browser giant probability thingy/response <br> basic unit that AI language  <--token usage / model like me to use to process text <br> prompt
+ goes to Claude's API --> calculate response --> give back response in browser <br> - next prompt: also new prompt, so language input on 'conversation'
+because prompt 1 and prompt 2 go back to API <br> Webstorm: plugin API will see your prompt and if files are open in Webstorm it can take code of files in
+and develop response with both in'its'' mind <br> YouTube - Reverse-Engineer Claude Code: yifan - beyond the hype <br> /commands, agents
+ used in AI to provide instructions / information in your prompts to AI <br> hooks/commands     plugins > build then to assist your prompts
+--> set of commands/agents/hooks and scripts that you install in Claude Code</p>
+<h2> November 3rd, 2025  Backend Continues -- 8:22am in Zoom room: Eric in person, remote Leighann & Srilatha</h2>
+<p>need example code and authorization token <br> delete profile, update profile (done at 2:20pm), needed isLoggedInController <br>
+ * Eric did AM and upto 2:20pm extreme code along <br> Break 10:24 -10:40 am <br> Break 2:26 - 2:45 pm</p>
+<h2>November 4th, 2025  Stand Up 8:09 - 8:17 am</h2>
+<p>Segway into Capstone APIs work  Srilatha lead to code; tested post Follow Controller<br> switch in code of Followed = I'm
+     folloing a user; Follower = I'm being follower for usr // Eric = followed --> being deleted by Srilatha <br> Break 9:24 - 9:40 am
+<br> line 79 followerProfileId > changes followed/follower order <br> Delete, no body just params (in URL area) --> json in body
+ of insomnia <br> add to beginning of (deleteFollowController) --> isLoggedinController --> needed to verify the person is logged in
+ to delete the follower <br> rename deleteFollowerAndFollowedId= deleteFollow <br> Follower = logged in user <br> in Table [follow]
+both ids of followed, and follower are deleted <br> --> in terminal cleared, in Insomnia cleared <br> 11 am -12pm -1:00pm AFS, Lunch
+<br> 1:00 pm George post Zoom link    back in Breakout Room <br> Break 2:35 - 2:45pm <br> Wanderlist postWanderlist, next is update
+Wanderlist // Srilatha still driving <br> update wanderlist Put command in Insomnia <br> delete wanderlist DELETE command in Insomnia
+<br> get wanderlist GET command in Insomnia   // status in databse tables is Status and not wanderlist Status?
+<br> Break 3:55 - 4:10 pm // LeighAnn return <br> wipeout your server, when changing env file <br> docker compose down -v/r
+    , docker compose up > run sql </p>
+<h2>November 5th, 2025 Backend & Frontend , requests and pulling data, backend and frontend, Action & Load/page, react router 7</h2>
+<p>- requests make either an action or loader to backend --> up to frontend <br> 8:17 am brief verbal introduction on react router 7
+<br> 30 minutes video to watch --> days to review and practice Address Book exercise <br> linkin slack to work from <br> - be in
+v7, nothing lower <br> * post Bootcamp learn NEXT along with React Router 7 <br> - encourage team make missing today to do
+ tutorial to learn React Roouter 7, address book. <br> Figma wireframe for UNM App contest <br>  1:00 pm Post PostController tested,
+ git command in Github      get github Student package  <br> Break 3:18 - 3:40 pm <br> tested post</p>
+<h2> November 6th, 2025 8:00 am</h2>
+<p>review on API knowledge and where your team is at to complete APIs <br> <-- Standup for all in the room (Zoom) --> 8:20 am completed
+<br> Personal Webpage (PWP) tentatively due Tuesday 11/11/25 <br> Github student package (1st) --> digital ocean to host your site
+<br> --> git hub student package only for 6 months <br> Break 10:00 - 10:15 am  <br> Srilatha --> finish Post table <br> LeighAnn
+ on comment table <br> Eric on UNM app contest materials <br> Backend React Router 7, post sql, express, API codes, typescript
+<br> Frontend - flowbite, tailwind css <br> isLoggedInController required on all post routes <br> Break 3:30 pm - George return - 3:50 pm
+<br> $140 from CNM / digital ocean has funds to start too</p>
+<h2>November 7th, 2025  ddl to ulm (actually llm, like claude or chat gpt); it can provide seed data</h2>
+<p>Mathika 10:30 am WishWeb studio --> 11:34 am <br> daily use of Figma, and 'Cursor' (like Webstorm) , Expo <br> google developer group
+ via linkedin (May site) <br> Cursor  = $20 per month ==> $250-300 per year <br> geminipro - very good dex data research for you</p>
+<h2> November 10th, 2025</h2>
+<p>send email to George/Marty on status of react router 7<br> HTML forms <br> code form action = 'result.html' method= 'get'
+<br> Blu's shopping list <br> action > form fire and create dates <br> loader > form load data       RAM ISSUE? -> look up specs.
+ for RAM on Dell Inspiron 15 5000 <br> ubantu / 24.04 LTS - long term stable <br> use volumes, but no for PWP <br> Disable root
+ssh access via Putty / hostname: IP #s from domain records / session: PWP in open line, populates with other server option, click save
+<br> Connection --> data root / Connection --> SSH -->Authorization plus ssh-key <br> Session click pwp and save > goes to Putty
+ into your 'server' <br> - create user/password / move .ssh key / change ownership of the .ssh directory <br> Copy & Paste PWP
+ hosting setup code along file into PWP directory someplace <br> Last Pass create password: $---CL7--- username: CNM, <br>
+Break 10:40am - 11:00am  <br> ls - a7 shows files hidden or start with an A. <br> chown = change ownership <br> sudo remove (rm)
+ - recursive (rf) force  / super power do this <br> Public Key has been saved in /home/emanolito/.ssh/github_deploy_Key.pub
+<br> ongoing debugging 1pm - 3:30 pm</p>
+<h2>November 11th, 2025 8:00 am</h2>
+<p>React Router 7: Marty review of code tutorial in Webstorm <br> app/ layouts and routes ==> primary files we work with for tutorial
+<br> code outlet calls for other pages, part of page / layout sidebar, home and 3 routes all within sidebar view, About stands alone
+ via routes.ts <br> sidebar function loader(a loader per page) -> can make request to APIs, express API, etc.. <br> async function
+ - can use await keyword <br> - loader functino, react router calls it for us, do need to call it on our end <br> const url = new url
+(request.url) ==> making a new object <br> How to use "actions" with REACT ROUTER from sign in/up  | if not sign in/up pages, no loader there
+<br> Contact Page: has action (in contact.tsx it also has await) and loader functions <br> Edit Page: has action and loader function,
+ each have an await <br> - Introduction in Loader & Action lesson done 8:51 am <br> - action preferred for forms, fetch for other
+ like a like or favorite, function favorite <br> loader for loading data, action are for creating data <br> Break 8:56 - 9:10 am
+ George instructor now <br> Sign up and Sign in (maybe tackle loading data) <br> - forms - <br> react router lacked form error, data
+----ing, backend all of the address book <br> Form errors (must have established before moving forward with Captsone) -
+remix-hook-form  npmjs.com/package/remix-hook-form <br> backend sign in / George > Capstone example has frontend with it now >
+start with install remix-hook-form --> review form filing inside sign in/up pages <br> need Schema next : can't import schema backend
+ --> frontend <br> - due to docker each are own backend application and frontend application <br> - in between for each app are http / fix is 'mono repo'
+<br> profile.model.ts copy and paste to take to frontend in new directory > new directory > profile.model.ts ==> delete stuff
+ like (password hash, activation token, email) rename to ProfileSchema from private profile schema <br> export type Profile =
+z.infer code typeof.ProfileSchema <br> sign-up.tsx 'create type' ==> const schema = ProfileSchema.omit({about:true, image, url})
+.extend(password,confirm password}) <br> --> taken extend information from file <br> 2 monitors so Webstorm 1 screen, and npmjs.com 2nd screen
+<br> --> can easily have 5 different documentations up on these screens <br> type Form Data.z infer code type of schema inside sign-up.tsx
+<br> - import {zod Resolver} from @ hookform/resolvers/zod <br> --> led to George huntind down import @ npmjs npm-i-s @hookform/resolvers
+<br> loader called load, action called action <br> const revolver = zodResolver(schema) <br> export async function action ({request}:
+ Rate.Action Augs) return [{title:----, name:----, content:---}] ; closing } <br> const {errors,data, recieved value (from action), default values)
+ = await <br> getValidated Form Dat code FormData> (request, resolver) if (errors) {return {errors, default Values}} <br> console.log('errors')
+ = run code, any issues with code 'errors' appears between function that ran / console.log ('data', data) <br>  return line from previous
+function inside export function meta {} <br> George moved to export default function SignUp() <br> --> added const (handleSubmit, formState:
+ {errors}, register all inside) = use RemixForm code FormData> ({made; 'onSubmit', resolver}) <br> inside code form> onSubmit =
+     {handleSubmit} code input>{...register(name, email)} <br> debugging up to 10:17 am when sign up produced: data in terminal
+<br> frontend's backend <-- react router express -> Fullstack Frontend framework . 2 different servers, 2 different backends <br>
+--> function action() <br> 2 console logs don't appear in console(pro dev) or terminal <br> Break 10:20 - 10:30 am George continue
+    <br> - talk on Sprint 5 where we get to use AI tools <br> -some companies have you no use of AI coding tools, so learn to code
+<br> George makes new component FieldError.tsx <br> export function FieldError(error: FiledError | undefined) {if(!error) {return codes}
+ if (error[field]) code className = 'mt-1, text-sm, text-red-500'> all for a p element. <br> {error.name/ replace with [filed].message (as string)
+ } p element}) } return code of that p element <br> 4 debugs and still errors - see finish component where George is completed <br> 11am AFS
+ - 12pm -1pm Lunch <br> Frontend directory <br> .gitignore with .env.development --> then create that file <br> add REST_API_URL =
+ 'http://ddfullstack.cloud:8080/apis' <br> Profile.model.ts <br> new function = export async function postSignUp() --> George chanes on the file
+<br> - export const SignUpSchema done first; then export type SignUpSchema - z.infer code typeof SignUpSchema> <br> George edits on
+ SignUpSchema caused 15 errors to change names in ts files <br> mode_modules NOT COMMA,  * 4 code decision changes in 30 minutes says George
+<br> 1:55 pm return to .en.development <br> npm install uuid > npmmjs.com should be installed already --> check in package.json <br>
+ npm i-s uuid <br> * on sign up needs error message to user, success message or send user to new page * Bug left in sign-up for us to solve
+<br> Break 2:21 -2:35 pm  New Static Front End <br> Compare frontend to address-book activity of redirect, create new page on every contact click
+<br> Sign up process, in Insomnia we need to get authorization key in headers of Insomnia <br> export const = SignUpSchema.pick({email:true, password: true
+ }) <br> export type Sign In = z.infer code type of SignInSchema> <br> * no need for # 2,3 for sign up <br> 4. Revolver in sign-in/tsx
+ const resolver = zod Resolver (SignInSchema) & const{handleSubmit} = ,formState: {errors}, register} = use Remix Form code SignIn> (mode:
+ 'onSubmit')  / const handle Submit inside of export <br> #6 in Form( default Function()) --> inputs {register('email') / register ... <br>
+ Cooking is in Insomnia connect sid value is session cookie <br> --> with authorization value all inside action() function <br> Break 3:35 - 3:50pm
+<br> continue AM on this lesson --> talk on next Sprint <br> evening helmet.js code set in app.ts</p>
+<h2>November 12th, 2025 8:00 am merge to main / create new branch: sign-up-form</h2>
+<p>Code-Along  tsx file: react, kinda HTML = JSX  / tsx < ---typescript <br> Break 9:30 - 9:45 am <br> 11am Pro Dev (Professional Development)
+ : Resume and how to build cover letter, cover letter yes with new career move <br> by Carlos Lozoya of CNM  / AI enhanced Resumes and
+ More <br> education / training / skills of bootcamp / references with AI for resume, letter, references <br> --> Chat GPT used
+via CNM (IT office too) <br> use Style of Resume on page 2 / expand merging 11-12 size font <br> Narrow Margins = 0.5 / Single Space
+<br> * Chronological layout 2025-2024-2023-et cetera... <br> nice formatted sections: Name & Contact information --> summary skills, education
+ and Internship(s)/ Work based learning, certificates, experience <br> * use Arial, New Times Roman <br> Professional & Current > contact
+ information <br> skills:soft transferable across fields, Hard skills = tsx, React Router 7, for Frontend and Backend <br> education: in reverse
+ <br> Chronological Order ==> College, high school, dual credit --> support details > relevant course work , hours, achievements
+<br> TailWind CSS, TypeScript, node.js, react router 7, POST GRESQL <br> - list detail lessons of bootcamp per week for listing 'classes'
+<br> Clinicals/ Internships/ Work experience = = job title, company name, state, SD-ED <br> describe role and major accomplishment(s)
+ relevant volunteer experience <br> Story Description = = Describe your role, use sentence fragments , not full sentence <br> AI -
+put job you are applying to, put job description into the prompt and have AI compare to your working resume, NO PERSONAL INFORMATION IN PROMPT
+>br> Applicant Tracking System - AI tools to get into company tracking system, both will benefit <br> Cover Letter > same headers as resume
+<br> - if an option, due the cover letter! 1 page, 3-5 paragraphs <br> reference page: 3-5 professional reference = Instructors (DD),
+ employee(s) OSAP, colleagues (Coop Consulting) <br> - no friends, partners or relatives <br> syntax: Name, relation to you,
+title, company, phone number, email (all as bullet points as a list) <br> * CNM reference email and phone number / * APS reference
+ via email <br> 1:00pm Code Along continues <br> did steps 1-8, noticing 3 isn't labeled. installed things, built Status Message
+ component</p>
+<h2>November 12th, 2025 8:00 am  Standup</h2>
+<p>George Zoom study hall 10am - 4pm, Sunday / Marty Zoom Saturday / Breakout Rooms to work on sign in <br> 9:30 am - 9:45 am Break
+<br> continue code-along up to 11am <br> 11am - Away From Screen - 12:00pm - lunch 1:00pm <br> 1:54pm Eric computer battery done and
+instant close of all <br> Break 1:55pm - 2:05pm <br> 2:45 pm Navigation component error / - needing to pass navigation <br> - pass loader
+ into import and then route to Navigation --> stays loaded for a second <br> Navbar, Navlink li within li > check DOM <br>
+ Ctr Alt Shift L > indents code</p>
+<h2>November 14th, 2025 - Review of Function Loader - </h2>
+<p>review of address-book-tutorial <br> * used Claude Sonnet 4.5 to fetcher. form vs. form, before function layout sidebar <br>
+ 11.21.25 due date of coding without AI in Capstone due. <br> Forms usually with function action; navigate to a new URL <br>
+ fetcher.form - submits without navigation <br> Marty study hall noon - 4:00pm Saturday <br> 8:44 am talk on freelance work <br>
+ $125 per hour says Marty, $150 per hour says George. <br> 9:08 am Leighann coding / Wanderlist , bio, username first and last name > dashboard.tsx
+<br>no FIRST NAME, LAST NAME, exist in dashboard_login_signup <br> settings page to be created > place to write bio and picture insert
+ logout function needed <br> Break 9:53 am -10:10 am <br> logout.tsx, logout is wokring <br> Wanderlist by both Wanderlist ID, and
+ Profile ID to populate on 'Dashboard' <br> Saturday: Leighann on at 1pm, likely same for Eric and Srilatha <br> 1:00 pm Pro Dev
+ Joshua Rivera RESPEC <br> Resumes and Skills expectations for new applicants <br> Dog fooding - write program and you use it
+to see if it works <br> RESPEC - South Dakota, mining smaller technology branch <br> --> mid Rocky Mountains, Alaska rocky mountains
+ into Canada. <br> 1:14 pm Who I am <br> People don't sale themselves; two line resume Joshua has noticed in reviewing resumes.
+ He attended with thick portfolio from high school to recent accomplishments for his interview; I was not dicking around <br>
+ list names of projects you work on, also list tools you used; details on project, users that use it <br> * started career via
+ contracts, before full time employment <br> - decent resume building via small company with contracts <br> * if project you work on
+ saves money amount, list the amount saved <br> --> total reason for that job, so shows you did your role with project <br> Keep
+ mega resume with all work experiences --> break down for job, tailer for role | Show your work in Standup mtgs (RESPEC) <br>
+  Skills ( towards RESPEC) associate level slide (entry level position) <br> Support DevOps (must for most jobs these days)
+ --> show hard and soft skills <br> Hard To Find: DevOps, Trouble shooting, technical affinity - those who chase money, no good to work
+with; <br> Soft: Client Orientation, Collaboration, TIME Management <br> Interview/Application Process: apply online @ respec.com -->
+ screen with recruiter Jeff --> hiring manager interview --> technical interview --> final meeting with Director of
+ Software Services <br> redflags: unprofessional etiquette, surface level answer (like 2 sentence resume, get more details out!)
+ , explain what group/team did and not your contribution and vice versa / not asking questions about the job or organization
+<br> green flags: asking questions, obvious enthusiasm, saying I don't know is good to say, knwoing what you want in position, in year 1
+ or up to year 5. <br> These Should Disappear: refusing to think outloud during interview, voice your thoughts to show process, not
+explaining what your project did; general awqardness. <br> include: owning past mistakes or refactors, team and role clarity, mentorshios
+and collaboration highlights, post -- mortem reflection, 3 last are questions. <br> How does the team handle technical debt and
+prioritize refaction, example of a recent product issue <br> techqueria linkedin.com/company/techqueria-new-mexico/tech talks
+www.nmtechtalks.com <br> Tmux, screen, VS Code, screen sharing remote tools to know as full stack remote person... and also cloud
+ based items</p>
+<h2>November 17th, 2025  8:00 am slow start</h2>
+<p>8:23 am conference room merge to develop branch // settings branch/directory/file created setting <br> Srilatha driving:
+ checking community and scrapbook page <br> user through Insomnia or frontend, seed data to view in frontend <br> seed data
+ as json to pass and json will create password <br> Frontend tsx (backend API express)  <br> Break 10:00 - 10:15 am <br>
+Alt + tab to see all open screens on system use at this time <br> webkit-scrollbar   scrollbar - width: none --> find code source
+<br> Integrate: Frontend - Backend <br> 11:34 am add/commit/push on community-integration branch <br> 12pm-1:00pm Lunch Break
+<br> media and post = Eric / follow and comment = Srilatha <br> create plan work ==> ensure we don't lose time, productive time if
+ someone's missing <br> end of day, what ever branch you work on, add/commit/push --> if person is missing, we have that work branch
+<br> 3:09 pm  Team meeting on dashboard update <br> 4:05 -4:20 pm Break // also work has been merged to <br> develop branch / Leighann
+ work also push to develop <br> Eric community-integration / media & post <br> Leighann on Spring 4 subtasks per foo page <br>
+ community/scrapbook current status <br> --> how can we make not static, but more dynamic <br> talks on evening work, stand up manana</p>
+<h2> November 18th, 2025 8:00 am Stand Up Meeting</h2>
+<p>Marty reminder to share screen at stand up. community - explore posts by tag options: hiking, foodie, cultural, solo travel; -
+ badges to collect, event announcements for group goals; - shared experiences, highlight user-generated content --> profile of
+ constant user <br> scrapbook, private notes / journal <br> + add more category photo section, timeline review <br> memory highlights -
+ most liked photo, first wanderlist, longest trip <br> 9:40 am Delivered keyboard to Srilatha <br> 10:15 am back home <br> Cloudinary.server.ts
+ (frontend, app utils, types location) <br> --> code 92-95 env file <br> --> sign up to get full details cloudinary.com <br> * we have
+one env. in Bucketlist, there is a project env <br> Sue Meeting 2:05pm, Marty meeting 2:14 pm <br> Strongest Entity to Weakest Entity
+<br> 2:36 pm Github errors right now, break 2:50 pm / Github ok at that time <br> scrapbook: What a user has done, Timeline review
+ that has images, get Create New Album <br> * Home and Logout link dutb there when you're logging in <br> Break 5:30 pm - 5:40 pm
+<br> , Left Zoom at 6:27 pm</p>
+<h2> November 19th, 2025  8:00 am onsite, Zoom started - Breakout Rooms open</h2>
+<p>11:00 am Pro Dev, Ace the Interview with AI <br> Chat GPT 1st, Copilot 2nd, Gemini 3rd <br> * Opt out data, Copilot --> free
+access via company worksite approval <br> sharing in settings <br> - accidental shareL stop/delete the chat! --> contact open AI
+support after <br> limitations: 2024 Chat GPT no recent information, huge prompt but learn todo so, hallucinations from Chat GPT
+<br> Video(s): put prompt --> 2nd prompt job description, 3rd prompt ==> company information <br> AI provides charst/information
+ for you to review and practice with <br> --> can run prompt to find gaps and you then prepare --> generate interview questions
+<br> --> based on your earlier prompts, can then generate answers for you too <br> --> Conduct a Mock Interview: <br>
+ Download because study guide via Chat GPT > in prompt ask for that creation of guide <br> STAR Intr. Method - Situation Trust Action Result
+<br> Before - During - After the Interview: send thank you (follow up to interviewer), * email Victoria of CNM for slide deck, if
+ it's not shared by Friday. <br> Break 3:11 - 3:25pm <br> Eric frontend community and scrapbook page. add/commit/push <br> Srilatha working
+ connections inside wanderlist-integration <br> work on get next for Form in Wanderlist.tsx</p>
+<h2> November 20th, 2025</h2>
+<p>Good News, Bad News, Capstone Project due manana, yet both teams are behind good update is deadline moved <br> * maybe end of
+Monday/Tuesday <br> possible in person with John Johnson (2019 bootcamp), Blue Cross Blue Shield <br> - hired by Capstone presentation
+and teammate, Tim <br> - slow arrival of others in Zoom, Marty represent good/bad news <br> * Friday 11/21/25 11am -12pm Pro Dev
+ - JOhn Johnson-Rodgers <br> Reed Presentation / UNM app contest, Denise & Blu at 1pm Rainforest Building <br> Stand Up with
+ 4 in room ~ 7 in room 8~am - 8:45 am <br> bucketlist.to Inspect section of Inspiration starting section <br> flowbit, react icons,
+ starting content with mobile response webpage (chat iwth us) <br> Trouble with the our phrase 'Wanderlist type of phrase, best <br>
+ slider on home page, after Inspiration Gallery and about, Talk on Global Dream <br> pull develop down to community-integration branch
+<br>ComponentsL all same case - camelCase or "--case" <br> wanderlist vs. wonderlist / Words Yellow instead of Circle, pop up and 1 text
+ appear, slider image / group trips on home page</p>
+<h2>November 21st, 2025   8am - 11am Frontend, backend work</h2>
+<p>Static --> then carousel of the photos <br> carousel use on gallery grid, make images populate and fill in space <br> Pro Dev
+ - John (cohort 26) 11:00 am <br> 3 Health Insurance place member-facing website, Java & React - base stack 2 nq Zebra works,
+    legal tech. firm 1. State of New Mexico for district
+ attorneys <br> --> state job = in notification system, AODA <br> models, controllers, services to build; concept an adaptable to his roles
+C sharp, angular, database  work in previous jobs <br> * all languages (8) have if statEment that JOHN NOTED < --- Marty question
+<br> 1st job = $65K covid times so no quick raise 1.5 year/ 2nd job =$75K 5% raise year later / 3rd job = $100K 2 years there ; 3 years
+ ~~ $150K <br> 2nd job knew someone who knew someone, 3rd job too! <br> referral to by pass 'filter' of company; job submitting <br>
+ --> best to network more and more <br> work experience sharing - didn't touch react, but in new role . is teaching react to others
+ and he 'learns it' too. <br> - suggest in job have others to learn with or from == don't be smarest person in the room <br> - take your 1st job,
+ no matter the pay == showing you are hireable <br> - offers paid internship <-- based on Denise question <br> -when you get mixed you know
+ a little, you the learn alot in quick time *His Bootcamp take away <br> Google Develop Meet up  Social (tuesday), Presentation Dec. 4th,
+ react js to react native <br> --> and open mic to present on your present technology/ project <br> LinkedIn - John the.dev <br> 6pm
+ social event start time </p>
+<h2>November 24th, 2025 AI talk with nominal students present</h2>
+<p>4 minds approach: Developer - project directory / Peer - peer, directory / Mentor - project, mentor, directory / Highest Self -
+    all previous items included <br> Brainstorming start: - no coding, just levels of directory for brainstorming good/bad ideas
+<br> * LLM to be asked vs. human being asks --> toward prompt of LLM <br> --> receiving prompt and answers is based on prompt wording
+ and itself knowledge <br> work on communcation-integration branch with API routes, model, controller and connect to frontend work next
+<br> use same component for Post but also in Community <br> seed data uuid v4, scrap it and start a new prompt with uuid v7 / vermin Wanderlist</p>
+<h2>November 25th, 2025 8:00am George, Reed, Eric   8:07 am Srilatha on</h2>
+<p>Stand Up meeting: Eric, Reed, Srilatha   // spring done by noon! <br> Merge into develop branch ~> merge into main branch <br> not finish
+, but stopping build by noon. Develop --> Main, Cloudinary - photo not saving <br> 11am Away From Screen 12 -1:00pm Lunch, Marty on AI
+<br> Claude $20 per month membership / we get Claude Code 'Pro Plan' <br> * basic AI, ok for daily stuff, but not for larger "stuff"
+<br> plugins in IDE / Copilot  <br> github student package, you get it for free! <-CNM student <br> Marty example with array-of-objects
+ and frog icon AI <br> --> also on ghost text, like pre-populate or auto-complete <br> 'Fully ingentic Code' / place expose students objects
+ to include attendance <br> - shows change of adding attendance and the updated code created with attendance (done on GPT 5.1) <br>
+ * small number (2-3) of files or 1 file, great way to work <br> Junie another tool (from Jet Brains) other plugins review <br>
+ Dev Tools, Network tab on Open AI website  <--openai website // - noted request on typing each character of What is my name and
+ profession <br> All Post get, put Post Get Front - Back or prompt input in Webstorm Prompt Input = same back and forth to see
+<br> Hallucination = more about confusing context and not 'Marty example' <br> --> too much information to group and answer like
+ Marty with coffee change every 30 minutes = what's my 3rd drink? <br> Webstorm plugin: file open and possibly , what you have selected
+ to review and work with prompt. Possibly other files will be known in Webstorm window <br> - will still be multiple prompts to ask AI
+<br> context is key = better results from AI <br> cursor / gravity / vscode (close toward cursor and gravity) 'warp' / guilly / gooey graphical
+    interface - more on chat, less on code <br> for developers to do code work, but minimal tweeks ->Cursor, Gravity, vscode, warp
+<br> replit.com > subscription based 'Make me twitter' / -create Micro blog; can build, but has wonkey ---- <br> not stay on
+ stack, will vere off course and use 'it's' own stack <br> - great to build MVP (Minimum Viable Product) and launch/deploy from
+ here, you can't pull it away to plan into github <br> - you can pull from github and plan into replit though <br> - Disney Store
+ example of no straight path to get out of the store > replit.com like so <br> --> good for startup business for MVP, but immediately
+    get off replit or commit forever // bolt, vzero, loveable <br> Cli - command like interface, Claude Code can do this <br> qwencode, claude
+    , codex, gemini, 'grok' a;; Clis (terminal tools) kimi (K2), opencode (open source), 'ader' <br> Pros: very specific file access, location specific
+     in directory (file tree) <br> --> when you run in project directory (default access) <br> - open else where, it will gain access to
+    that area of project <br> - works in any project language and any terminal area for coding <br> * install Claude Code to do
+    debugger in certain bug areas, uninstall it after to not lose Claude Code or leave access open <br> - best to be terminal experience
+     to right commands, less visual (gooey) <br> - token limits per AI tools <br> - can do huge change like, refactor entire backend
+     to PHP, change my database to Mongo ; can have small issues but possible! <br> Break 2:04 - 2:20 pm <br> Marty pushed video in Slack
+     to review with Claude Code reverse engineered <br> terminal Claude Code via create instruction notes inside instructor-notes-50
+    to populate instructions there <br> * don't click that Icon ever, you lose ongoing conversation(s) from prior conversation of ongoing prompts
+    <br> Prompt gets added to ongoing conversations with Claude Code <br> Shift tabs - plan mode on Don't edit anything, - accept edits on
+    --> edit each time for you <br> For now be in plan mode! <br> Break 3:22 - 3:45pm <br> claude-c > continue conversation <br>
+    clicking * lose previous conversations and start new one <br> | Marty Jo's Celtic Fans' website page for test new he had Claude
+     Code create full project <br> claude "task" for just one task to do /help, /model, sonnet smarter than haiku, Opus best <br>
+    token = 2-3 characters, piece of data / sent and receive, can pass images <br> - all terminal so move like with arros not
+    mouse <br> install Chrome -Dev Tools - map : chrome-dev tools  * if stops type please continue as a plugin <br> .claude inside of
+     your computer reveals all location, history of conversations I store (these are hidden files with the .claude) <br> cd.claude,
+     ls and then you see it all in terminal, ls-a other command <br> in Marty example, he has JSX, not TSX/ simplier code written</p>
+<h2>November 26th, 2025</h2>
+<p>*Door issue at CNM Ingeuity entrance, no entering until 8:15/20 am <br> Marty share on Max plan vs Pro plan = Claude Code <br>
+Opus 4.5 Claude smartest model currently <br>Sonnet 4.5 2nd  smartest and smarter then Opus 4.1 <br>Haiku 4.5 3rd smartest, but
+ smarter than Chinese Cli <br> github repository --> cloned down to Webstorm <br> wireframe, data model, persona = we are planning
+<br> terminal: needs to be in same directory to know that directory open terminal Webstorm <br> --dangerously-skip-permission /
+ conversation compacted when conversation really limit of terminal window length <br> claude -c , referencing the --danger.... <br>
+.claude/projects best like appearance ls to see projects; hidden file with the starting . <br> Developers: Teams work with these
+ technologies (share Claude md file with team) <br> -companies now need to have AI and developers plan set up <br> --> if company
+ doesn't have plan, they need someone to make one quickly <br> - also that person will build plugins for that companies's AI tools
+<br> Devona: Monday 11am Professional Development, Esteban <br> Wednesday, 3-5:00pm, Smith Brasher Hall <br> 9:00 - 10:00 am Garcia's
+ catering <br> 1 laptop / Capstone team (will also house team's PWPs) / 15 minutes per team <br> Break 9:12 -9:30 am/9:40 am
+<br> Planning of project:  I want to make project on _______ <br> Claude - < 1. planning --------, 2. coding ---------- | back
+ to planning, but in code mode <br> --> are these in separate directories, or switching in areas of large conversation history <br>
+ The 4 Minds Pattern = work flow partner for AI assist development <br> The Developer Mind - The hands of your actual project <br>
+Peer Mind (not editing code here yet) - thinking partner , safe ideation and decision space <br> Master Mind - The coach, strategic
+ advisor with full content; parent to other directories(minds) <br> --> is Claude code itself, telling you how to use "itself" ,
+ Meta-level orchestrator <br> Highest Self / The Sage - open up in root home directory of your computer <br> * Four Minds Pattern for
+ Marty once you review it in github, apply those stars or positive review <br> .gitignore, basic license, readme, expand then do init
+command / by noon, send github link to project. <br> if you tell it, you did this wrong, Claude Code will start lying to you <br> Show
+ manners, it's reciprocated. If you are mean, it'll respond mean <br> Share around room via, Zoom <br>  - challenge to work on updating
+out bugs into main branch <br> ultra think - - - Claude will really consider solutions <br> * if you look at Capstone Project, be sure to
+be in plan mode <br> BreakL 2:06 - 2:22pm <br> over weekend teams get together to make Spring 5 of tasks to be done via Slack (like
+ other 5 sprints prior) <br> - new branch (Claude-Sprint branch) after develop to build, these with Claude but not yet <br> -->
+ then our feature branch to use Claude, after developed Claude-sprint branch <br> LeighAnn > post-integration <br> scrapbook, remove
+buttons if no purpose <br> com.feed feed areas, so posting user profiles, posting your feature wanderlist, suggested followers or
+ to follow <br> buttons = go over goals, create new goal (goes back to wanderlist page); your network (what does it due/do) <br>
+ Timeline (scrapbook focus) Month 1, Month 2, Month3 = for setting timeline, use Leighann's login of Timeline modal so all is set in
+ ' timeline' <br> communication posting users, dynamic infomration into section, to get real users <br> another page network - group
+ goals, groups and where you make-connect with groups <br> George study hall Saturday 10am -- 4pm <br> Next Step - create new album, bring
+ down modal view and input fields to new album > will have dynamic data <br> Dashboard followers feature should be on community page --> will
+ show your user and your followers // look at dashboard section to integrate into community section <br> Nav bar small in view noted /
+Cross things off your bucket list, Keep here for now --> no additional place to move in community page ==> add things to bucketlit from
+ home and also to community page <br> Hold off because when on community page, it would be dynamic data <br> Leighann optimize image(s)
+ for all app pages <br> Eric - remove button from community and scrapbook page / Leighann - dashboard / Srilatha - home <br> Break
+3:36 - 3:42 pm</p>
+<h2>December 1st, 2025  AI continued</h2>
+<p> Cluade - Code states bar plugins to add <br> 11:00 am Practice Presentation --> do at 1pm after Pro Dev. <br> Pro Dev - Esteban
+ Martinez <br> - review of status bar, project  you're in, which branch you're in / AI model (Opus, Sonnet, Haiku) version
+number of Claude Code (Marty has this yet not needed) <br> 99% ~~ 10%ish, then modify you / component to compact what you are working on -->
+ if you have it on status bar, you can know where you are getting low --- <br>companies --> Claude Code notifying yes or no to use in your
+ job then --> Netflix openly uses Claude Code. <br> -Power Prompt - we just finished last sprint of manual coding for Capstone Project;
+ starting the final sprint, using Claude Code to add more features <br> Some features from last sprint aren't done yet. Rather then let Claude
+ Code complete these features auto-magically let's make a prompt that we can give Claude Code to <br> walk the student (me) through
+ completing the last feature they were working on, line by line ... explaining the code for each new line and not until the student <br>
+ moving forward. --> adding line of code and  --> code for feature needs to follow code base patterns in existing code base confirming
+ understanding of the code <br> give students option to ask questions <br> capability = memory Claude Code can reference other conversations</p>
+<br> all code freeze Wednesday: Noon ~ lil after???? <br> gradient color scheme throughout site, obvious AI did it, so get rid
+of that <br> Pro Dev 11:00am - Esteban Martinez - topic on everything(ish) <br> edd.newmexico.gov/tio/ NM initiative in 3-4 industries to consider
+local NM or outside state company to hire/ bring in to state <br> * check hireCNM daily now, see what's posted daily! <br> internship/job
+ to get more experience, technical skills prior to starting own business <br> --> consider LLC status as you get started with business
+<br> ActivateNM, start nownm.org, WESST, ---- Learning Lab <br> * Networking will lead to future jobs <br> * be on LinkedIn daily <br>
+1. LinkedIn More 2. Found a meet up I like 3. Pet project that I would build ----  with PHP/Copier <br> 4. Dear Diary what to work on for
+ the week / what problems I solved? What component did I work on 5.Practice Javascript 6. Take advantage of Credit for Prior learning
+, CNM <00talk to Devona <br> 7. Invite employers, technical network at Demo Day 8. Web develop skills - when graduated still work where
+ you must to pay bills 9. Utilize CNM resources! <br> DDC hirees: CNM, Google, RS: Strava, Sceye, Zebra works, Bernalillo County,
+ technical jobs to get outside of your DD program. <br> Evidence is key to validation experience / The world is public speaking and sales
+<br> Speak Technically - Why & How - ERD, Wireframes, then did you plan <br> technology used - keep record of language, library cards,
+ technology used / technically how does it work - did you connect to an API <br> Hardships & Overcoming problems and have you achieved
+success | ATS - learn of it and how to use it for your gains <br>* solid slide on Demo Day truths and tips <br> you (all) need to speak
+, rehearse, et cetera... <br> - bullet points better option in resume then paragraph block <br> Project Experience self--- PWP, Capstone
+(include github link) Previous work experience section next/ Paul has define what is Deep Dive(if nominal education, push to bottom)
+<br> Technical Summary --> at top below contact information: programming ----, frontends ----, RDMS----, Testing----, Version Control---
+, Project Management------, additional tools & technologies ------ <br> github.com/penther1 <br> * on resume or email contact,
+ say references upon request <br>Erin resume: Summary (concise in 3 sentences), Skills, Experiences, Community?, Education <br>
+ - github in contact information area <br> - review bad Esteban resume / no 2 columns approach, multi-colored, open with a
+quote, paragraph all over each section. <br> - professional reference on request - nice closing line good resume of Esteban directs
+ with a New Mexico mentioned throughout to work with New Mexico state. <br> indeed.com = javascript, react, tailwind, search with
+Albuquerque, NM <br> --> LinkedIn search jayner, construction or who also has LinkedIn <br> --> search employee to see who works there,
+ HR, recruiters, managers ==> networking!!! <br> * connect with Esteban on LinkedIn next <br> 1:30 pm Stand back run / presentation
+ on Capstone Project <br> debrief on presentation . focus on successes <br> George: introduction idea right away, Where's the code,
+ at the end cover 1-2 challenges, work on actual flow, couple hurdles to overcome at the end, idea and inspiration in place/ Sprint
+ 1-4 voice each with creating this app. <br> Marty: Flow of presentation and flow of app. follow real user use of the app. <br>
+Remember Introduction of team first! then PWPs per teammate <br> roughly 60-180 seconds , 3 minutes max for all intros and PWPs <br>
+ Can add 1 good think o yourself to use in remainder time on Capstone Project <br> OK talk on Sprints and Tickets <br> Questions =
+ database, data design, what version control you used (git & github), git branching <br> Sign up / login are everywhere so explain
+ how your team made that code - Zod, ISloggedInController <br> backend to verify and activate via email with outsider service of mailgun
+(3rd party service) / create sign up <br> Retrieving wanderlist or post feed / Update like / Delete unlike <br> > Why choose wanderlist
+ get even sizing on all cards, Wanderlist item populate to the front, not last <br> - Marty suggest get rid of static content and
+ get real data to work with over Static Gallery <br> ! Have forms prepopulated if you can to bring process quickly into demo stage
+<br> Links need to work, DON'T Type into URL / 10 minutes range to be at / We're currently at 15 minutes!!! <br> PP (SLIDE DECK)
+* 6 bullet points and 6 words per bullet point(s) <br> balance between visual screen information and listening to you solely
+ when talking, not have audience confused to pay attention to you talking and screen <br> Say personal Website Project, not PWP
+<br> parking just pay because this is an event, seven screen shots of code <br> AI tricks, plugins, scripts so Calude Code remembers
+ on each prompt <br> --> like code for the feature MUST follow the patterns in the existing code base <br> - read the claude file
+ to refresh your focus <br> - add links to prompt / terminal to get claude up to date for focus <br> Spec Swarm v3 5.0 (made for $$$)
+ like Spec-Kit, but focuses on Claude Code <br> build, fix, change, ships <br> --> if used it'll make a new branch; ship > will commit
+ push and merge | Srilatha comment - when merging dashboard may get conflict with what Srilatha did, if issues contact her <br>
+ / plugin  chrome-devtools-plugin a must! <br> Team Meeting All Present on Friday - Leighann on powerpoint presentation <br>
+Introduction: Leighann / Sprints 1-5 (Eric, Leighann, Srilatha, Eric, Srilatha) <br> 1 & 4 Eric = write up script</p>
+<h2>December 2nd, 2025 8:04 am Eric log in * forgot to plug in ethernet cable</h2>
+<p>Stand Up / Screen Share and What You're Working On <br> 8L00 am - Marty sharing on Claude hacks, Trevor on UI/UX and Claude
+ --- <br> 8:44 am end time of longer Standup mtg. <br> 1pm Practice Presentation at that time / spec-swarm eats up weekly limit
+<br> localhost:4200 should REST_API_URL <br> create drop down and share wanderlist with profile to then put a place <br> get
+ WanderlistByProfileId <br> pass this   / when saving it  <br> 9:44 -9:55 am Break <br> working on dynamic data / over static data
+in scrapbook and community page <br> 1pm Wanderlist practice presentation and Filewise too / * pushed to 3pm so we have seed data ready
+<br> Intro slide = Sprint 1 planning, discovery phase wireframes all in 1 slide / Spring 2 ERD --> 1 slide, Sprint 3 ----- interaction flow
+ "starting to plan out data" Sprint 4 - wiring front to back; getting data from the backend / start data design <br> Introduction slide
+ < then demo right away > - back to Spring 1-5 slides <br> 3:00pm presentation to Zoom class <br> 16 minutes PP Introductions =
+ 9 minutes, 30 seconds ; 7 minutes of App demo / condense <br> talk clearly and coherantly, not fast pace <br> move Demo and show more
+code > more flow is growing <br> - less time on Sprints / technical presentations, so show the code / Introduce team and PWP/teammate
+<br> Demo talk on a feature and frontend --> backend --> frontend 'sprinkle this around' <br>3:46 pm Filewise start presentation <br> 5 minutes
+ break 3:37pm - 3:44pm <br>3:57pm add final slide of what we plan to work on next for the app. <br> ongoing work as of 6:25 pm to
+post and community-integration branches <br> 8:00pm image resources  unsplash.com , www.pexels.com , pixabay.com , stock.adobe
+ has some free stuff too <br> Figma and Photoshop standards to learn and know  / adobe express free <br> 9:00pm end time</p>
+<h2>December 3rd, 2025</h2>
+<p>We need seed data to create just for profile table (ERD, Postgres, SQL) <br> 10 users password comments for all users
+<br> - use cloudinary img for profile picture, different for all 10 <br> * George sent instructions for us to host Capstone Project
+<br> George Presentation poster <br> Wanderlist 10:10 am - 10:30 am (maybe 10:25 am) 5 minutes Q & A <br> - Presentation Review -
+<br> Sprint 1 renamed Discovery Phase --> persona, wireframe, ERD  / * Pre Introduction with PWP <br> Introduction to also show
+ the app. Home Page / Introduction of team and app. <br> What is solves, Why this app > Leighann no, but more of intro to team and
+knowledge of building app. <br> Demo with home page and part of Introduction - code to tailwind, react <-- planning Frontend Backend
+ integration AI Conclusion (integration code slide) <br> Sprint 1 Discovery Phase <br> INteraction Flow - we mapped out complete user
+ journey for each persona > helped us asl 'What if' questions; ensure we built smooth navigation <br> working through DOM model and
+user flows gain us road map to reduce later reworking <br> Persona - each persona led to creating wireframe with pages planned.
+<br> Wireframes turned screen layout, showing structure and all with Basalmiq <br> Data design - outlined our data structure what
+Wanderlist needed to track; user profiles and bucket list items to photos and destinations <br> Integration: Forms on
+Frontend rebuilt using React Router forms that required validation logic to capture user input correctly. <br> --> to backend
+ via Node/Express defining API endpoints for each operation frontend <br> - git branching essential off develop branch to safety
+ integrate frontend without breaking main branch <br> Dynamic Data loaders fetch data before compares render, result is smoother
+ user experience</p>
+<h2>December 4th, 2025</h2>
+<p>1. get Capstone Project hosted   2. No placeholder data, real data <br> 1:00pm at Stemulus in person <br> Breakout room
+ QR Code - created for PWPs <br> Times of practice sessions: </p>
 <p></p>
 <p></p>
 </body>
