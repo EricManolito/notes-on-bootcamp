@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CNM Deep Dive Cohort 50 — Reference Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:        #0f1117;
+      --surface:   #181c27;
+      --surface2:  #1e2333;
+      --border:    #2a3050;
+      --text:      #e2e8f0;
+      --muted:     #8892a4;
+      --accent:    #7f77dd;
+      --accent2:   #1d9e75;
+      --warn:      #e24b4a;
+      --code-bg:   #141824;
+      --font-head: 'Bitter', Georgia, serif;
+      --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+      --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15,17,23,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    nav .nav-brand {
+      font-family: var(--font-head);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    nav a {
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    nav a:hover { color: var(--text); }
+    nav .nav-right { margin-left: auto; }
+    nav .section-links {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+    nav .section-links a {
+      font-size: 0.78rem;
+      font-family: var(--font-mono);
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 2px 8px;
+      transition: all 0.15s;
+    }
+    nav .section-links a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* LAYOUT */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 5rem;
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      padding: 3rem 0 2rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 3rem;
+    }
+    .page-header h1 {
+      font-family: var(--font-head);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    .page-header p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.5rem; }
+    .page-header .tag {
+      display: inline-block;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 0.78rem;
+      font-family: var(--font-mono);
+      color: var(--accent2);
+      margin-top: 0.5rem;
+    }
+
+    /* REFERENCE SECTION */
+    .ref-section {
+      margin-bottom: 4rem;
+      scroll-margin-top: 80px;
+    }
+    .ref-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--accent2);
+    }
+    .ref-number {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent2);
+      background: var(--surface2);
+      border: 1px solid var(--accent2);
+      border-radius: 3px;
+      padding: 2px 7px;
+      white-space: nowrap;
+    }
+    .ref-header h2 {
+      font-family: var(--font-head);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* CONCEPT CARD */
+    .concept-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .concept-card h3 {
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+    .concept-card h4 {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--accent2);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin: 1rem 0 0.5rem;
+    }
+    .concept-card h4:first-of-type { margin-top: 0; }
+
+    p.note {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: var(--text);
+      margin-bottom: 0.65rem;
+    }
+    p.note:last-child { margin-bottom: 0; }
+
+    ul.nl, ol.nl {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      padding-left: 1.4rem;
+      margin-bottom: 0.65rem;
+      color: var(--text);
+    }
+    ul.nl li, ol.nl li { margin-bottom: 3px; }
+
+    pre.cb {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent2);
+      border-radius: 6px;
+      padding: 1rem 1.1rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      line-height: 1.65;
+      overflow-x: auto;
+      margin-bottom: 0.65rem;
+      color: #c9d1d9;
+      white-space: pre-wrap;
+    }
+    code.ic {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 1px 5px;
+      color: #c9d1d9;
+    }
+
+    table.st {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.83rem;
+      margin-bottom: 0.75rem;
+    }
+    table.st th {
+      text-align: left;
+      font-weight: 500;
+      padding: 6px 10px;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    table.st td {
+      padding: 6px 10px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      color: var(--text);
+    }
+    table.st tr:last-child td { border-bottom: none; }
+    table.st td:first-child { font-weight: 500; white-space: nowrap; color: var(--accent2); }
+
+    .reading-order {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 6px 6px 0;
+      padding: 0.85rem 1rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+    strong { font-weight: 500; color: var(--text); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">CNM Deep Dive — Cohort 50</a>
+  <div class="section-links">
+    <a href="#rest-http">REST / HTTP</a>
+    <a href="#node-express">Node / Express</a>
+    <a href="#authentication">Auth</a>
+    <a href="#git">Git</a>
+    <a href="#javascript">JavaScript</a>
+    <a href="#typescript-zod">TypeScript / Zod</a>
+  </div>
+  <a href="index.html" class="nav-right">← Bootcamp Notes</a>
+</nav>
+
+<div class="container">
+
+  <header class="page-header">
+    <h1>Concepts Reference</h1>
+    <p>Deeper explanations of the core topics from the CNM Deep Dive Fullstack Bootcamp.</p>
+    <p>These sections expand on what appears in the chronological notes — grounded in the Wanderlist Capstone wherever possible.</p>
+    <span class="tag">companion to index.html · Cohort 50 · 2025</span>
+  </header>
+
+  <div class="reading-order">
+    Suggested reading order: REST / HTTP → Node / Express → Authentication → Git Branching → JavaScript Methods → TypeScript / Zod. Each section builds on the one before it.
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SECTION 1 — REST APIs and HTTP -->
+  <!-- ============================================================ -->
+  <section class="ref-section" id="rest-http">
+    <div class="ref-header">
+      <span class="ref-number">01</span>
+      <h2>REST APIs and HTTP</h2>
+    </div>
+
+    <div class="concept-card">
+      <h3>HTTP — the language of the web</h3>
+      <p class="note">Every time a browser loads a page, every time the Wanderlist frontend asked the backend for data, the communication happened over HTTP — HyperText Transfer Protocol. It's the agreed-upon language that clients (browsers, React frontends) and servers use to talk to each other.</p>
+      <p class="note">HTTPS is the same thing with encryption added — the S stands for Secure. Every production web app uses HTTPS. The http.cat site maps every HTTP status code to a cat photo — a fun but genuinely useful reference when debugging why a request is failing.</p>
+
+      <h4>Anatomy of a URL</h4>
+      <pre class="cb">https://eric.ddfullstack.cloud:8080/apis/wanderlist?profileId=123
+
+https://               → protocol (secure HTTP)
+eric.ddfullstack.cloud → domain (the server address)
+:8080                  → port (which door on the server to knock on)
+/apis/wanderlist       → path (which resource you want)
+?profileId=123         → query parameter (filtering or extra info)</pre>
+
+      <h4>HTTP methods — the four actions of CRUD</h4>
+      <table class="st">
+        <thead><tr><th>HTTP Method</th><th>Database Op</th><th>Plain English</th></tr></thead>
+        <tbody>
+          <tr><td>GET</td><td>SELECT</td><td>Read / retrieve data</td></tr>
+          <tr><td>POST</td><td>INSERT</td><td>Create something new</td></tr>
+          <tr><td>PUT</td><td>UPDATE</td><td>Edit something existing</td></tr>
+          <tr><td>DELETE</td><td>DELETE</td><td>Remove something</td></tr>
+        </tbody>
+      </table>
+
+      <h4>HTTP status codes</h4>
+      <table class="st">
+        <thead><tr><th>Code</th><th>Meaning</th><th>When it appears</th></tr></thead>
+        <tbody>
+          <tr><td>200</td><td>OK</td><td>Request succeeded, here's your data</td></tr>
+          <tr><td>201</td><td>Created</td><td>POST succeeded, new record created</td></tr>
+          <tr><td>400</td><td>Bad Request</td><td>Something wrong with what you sent (Zod validation failure)</td></tr>
+          <tr><td>401</td><td>Unauthorized</td><td>You're not logged in (isLoggedInController fired)</td></tr>
+          <tr><td>403</td><td>Forbidden</td><td>You're logged in but not allowed to do this</td></tr>
+          <tr><td>404</td><td>Not Found</td><td>That resource doesn't exist</td></tr>
+          <tr><td>500</td><td>Internal Server Error</td><td>Something broke on the server side</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="concept-card">
+      <h3>REST — the design pattern behind our API</h3>
+      <p class="note">REST stands for Representational State Transfer. It's not a technology — it's a set of conventions for how URLs and HTTP methods should be structured so APIs are predictable and consistent.</p>
+
+      <h4>REST conventions followed in Wanderlist</h4>
+      <ul class="nl">
+        <li>URLs identify <strong>resources</strong> (things), not actions: <code class="ic">/apis/wanderlist</code> not <code class="ic">/apis/getWanderlist</code></li>
+        <li>HTTP methods define the <strong>action</strong>: GET to read it, POST to create it, PUT to update it, DELETE to remove it</li>
+        <li>A specific item is identified by its ID in the URL path: <code class="ic">/apis/wanderlist/:wanderlistId</code></li>
+        <li>Responses always return JSON with a consistent shape: <code class="ic">{ status, message, data }</code></li>
+      </ul>
+
+      <h4>Wanderlist REST API examples</h4>
+      <pre class="cb">// GET — retrieve data
+GET /apis/wanderlist                    // get all wanderlist items
+GET /apis/wanderlist/:wanderlistId      // get one by ID
+GET /apis/profile/:profileId            // get a profile by ID
+
+// POST — create new data
+POST /apis/wanderlist                   // create a new wanderlist item
+POST /apis/sign-up                      // create a new profile
+
+// PUT — update existing data
+PUT /apis/wanderlist/:wanderlistId      // update a wanderlist item
+
+// DELETE — remove data
+DELETE /apis/wanderlist/:wanderlistId   // delete a wanderlist item
+DELETE /apis/follow/:followId           // unfollow a profile
+
+// Standard response shape used throughout Wanderlist:
+response.json({ status: 200, message: 'wanderlist retrieved', data: result })</pre>
+
+      <h4>Query parameters vs URL parameters</h4>
+      <pre class="cb">// URL parameter — identifies a specific resource
+// Route defined as: router.route('/:wanderlistId')
+// Request URL: /apis/wanderlist/abc-123
+// Access in controller: request.params.wanderlistId
+
+// Query parameter — filters or modifies a request
+// Request URL: /apis/wanderlist?visibility=public
+// Access in controller: request.query.visibility
+
+// GET requests use URL params and query params — no body
+// POST and PUT requests put their data in the JSON body
+// This is why passwords always go in POST requests — they don't show up in the URL</pre>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SECTION 2 — Node.js, Express, and the Request/Response Cycle -->
+  <!-- ============================================================ -->
+  <section class="ref-section" id="node-express">
+    <div class="ref-header">
+      <span class="ref-number">02</span>
+      <h2>Node.js, Express, and the Request/Response Cycle</h2>
+    </div>
+
+    <div class="concept-card">
+      <h3>What Node.js actually is</h3>
+      <p class="note">Before the bootcamp, JavaScript only ran in the browser. Node.js changed that — it's a runtime environment that lets JavaScript run on a server, outside the browser entirely. That's the reason we could write our entire backend in TypeScript/JavaScript instead of switching to a different language like Python or Java.</p>
+      <p class="note">When you ran <code class="ic">npm install</code> or <code class="ic">npm run dev</code> in the terminal, that was Node running. Every time you saw a <code class="ic">package.json</code> file, that was Node's way of tracking what your project depends on.</p>
+
+      <h3>What Express is</h3>
+      <p class="note">Express is a framework that runs on top of Node. If Node is the engine, Express is the car — it gives you the structure to build a web server without writing everything from scratch. What Express does for us: listens for incoming HTTP requests, routes those requests to the right function, and sends a response back.</p>
+      <p class="note">In the Wanderlist backend, every API endpoint we built in Insomnia was Express receiving a request and sending back JSON.</p>
+    </div>
+
+    <div class="concept-card">
+      <h3>The Request/Response Cycle</h3>
+      <p class="note">This is the heartbeat of everything on the backend. Every single interaction between the frontend and backend follows this pattern:</p>
+      <pre class="cb">Frontend (React)
+    → HTTP Request
+        → Express Router
+            → Controller
+                → Model
+                    → PostgreSQL
+                ← Model returns data
+            ← Controller sends response
+    ← Frontend receives JSON</pre>
+      <p class="note">This is the SQL → route → controller pattern introduced in the October 27th code-along. We also built it in reverse — controller → route → SQL — depending on the day.</p>
+
+      <h4>async/await — how we handle waiting</h4>
+      <p class="note">The database doesn't respond instantly. When your code asks PostgreSQL for data, it has to wait. That's what async/await handles — it tells JavaScript "pause here until this finishes, then continue."</p>
+      <pre class="cb">// Without async/await this would be a problem —
+// JavaScript would move on before the data came back
+
+export async function getWanderlistByProfileId(profileId: string) {
+  const result = await sql`
+    SELECT * FROM wanderlist
+    WHERE profile_id = ${profileId}
+  `
+  return result
+}
+
+// The async keyword tells JavaScript this function will have waiting in it.
+// The await keyword says "stop here until this comes back."
+// Every controller function was async. Every database call used await.</pre>
+    </div>
+
+    <div class="concept-card">
+      <h3>The three layers — Model, Controller, Route</h3>
+      <p class="note">In the Capstone backend the code was split into three clear layers. This separation is a standard pattern called MVC (Model-View-Controller) — though in our case the "View" was handled by the React frontend.</p>
+
+      <h4>Model</h4>
+      <p class="note">Talks directly to the database. Contains the SQL queries. Doesn't know anything about HTTP requests or responses. Example: <code class="ic">getWanderlistByProfileId()</code> in <code class="ic">wanderlist.model.ts</code>.</p>
+
+      <h4>Controller</h4>
+      <p class="note">The middleman. Receives the request, calls the model, sends the response. Also where Zod validation lives — checking that incoming data is the right shape before it touches the database. Example: <code class="ic">getWanderlistByProfileIdController()</code> in <code class="ic">wanderlist.controller.ts</code>.</p>
+
+      <h4>Route</h4>
+      <p class="note">The address. Tells Express which controller to call when a specific URL and HTTP method are hit. Example: <code class="ic">router.route('/:profileId').get(getWanderlistByProfileIdController)</code> in <code class="ic">wanderlist.route.ts</code>.</p>
+
+      <pre class="cb">// The flow:
+// wanderlist.route.ts  →  wanderlist.controller.ts  →  wanderlist.model.ts
+// (URL + HTTP method)      (validate, respond)           (SQL query)
+
+// Example route file
+router
+  .route('/')
+  .get(getAllWanderlistController)
+  .post(isLoggedInController, postWanderlistController)
+
+router
+  .route('/:wanderlistId')
+  .get(getWanderlistByIdController)
+  .put(isLoggedInController, putWanderlistController)
+  .delete(isLoggedInController, deleteWanderlistController)</pre>
+
+      <h4>Insomnia — testing the backend without a frontend</h4>
+      <ul class="nl">
+        <li><strong>GET</strong> request → no body, data goes in the URL</li>
+        <li><strong>POST</strong> request → has a JSON body, data doesn't appear in the URL</li>
+        <li><strong>PUT</strong> request → update existing data, usually needs both a URL param and a JSON body</li>
+        <li><strong>DELETE</strong> request → usually just a URL param identifying what to remove</li>
+      </ul>
+      <p class="note">The authorization token in Insomnia headers was how we verified a user was logged in — the <code class="ic">isLoggedInController</code> middleware checked for that token before letting the request through.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SECTION 3 — Authentication -->
+  <!-- ============================================================ -->
+  <section class="ref-section" id="authentication">
+    <div class="ref-header">
+      <span class="ref-number">03</span>
+      <h2>Authentication: Sign Up, Sign In, and Staying Logged In</h2>
+    </div>
+
+    <div class="concept-card">
+      <h3>What authentication actually solves</h3>
+      <p class="note">Authentication answers one question: <strong>who are you, and can I trust that?</strong> Every app that has user accounts needs to solve this problem. The challenge is that HTTP is stateless — every request arrives with no memory of previous requests. Authentication is the system we build to solve that.</p>
+
+      <h3>Passwords — why we never store them directly</h3>
+      <p class="note">Storing a user's actual password in the database is one of the most serious security mistakes a developer can make. Instead we store a <strong>hash</strong> — a one-way transformation of the password. You can turn a password into a hash, but you cannot turn a hash back into the original password. When a user signs in, you hash what they typed and compare it to the stored hash.</p>
+      <p class="note">In the bootcamp we used <strong>argon2</strong> for hashing. The modular arithmetic analogy from Marty: dividing numbers and keeping only the remainder illustrates the one-way nature — you can always compute the remainder, but you can't reverse-engineer the original number from just the remainder.</p>
+      <pre class="cb">import argon2 from 'argon2'
+
+// On sign up — hash before storing
+const passwordHash = await argon2.hash(password)
+// Store passwordHash in the database, NEVER the raw password
+// The hash is always exactly 97 characters — stored as CHAR(97) in PostgreSQL
+
+// On sign in — verify against the stored hash
+const isValid = await argon2.verify(storedHash, passwordAttempt)
+// Returns true if they match, false if not</pre>
+    </div>
+
+    <div class="concept-card">
+      <h3>Activation tokens — verifying an email address</h3>
+      <p class="note">When a user signs up, we don't immediately activate their account. We send them an email with a unique activation token — a random 32-character string stored in the database. When they click the link in that email, the token is verified and the account is activated. This is the <code class="ic">activation_token varchar(32)</code> column in the profile table. The third-party service used to send the email in Wanderlist was <strong>Mailgun</strong>.</p>
+      <pre class="cb">import { randomBytes } from 'crypto'
+// Generate a random 32-character activation token on sign up
+const activationToken = randomBytes(16).toString('hex')
+
+// Store it in the profile row alongside the hashed password
+// Email the user a link containing this token
+// When they click it: look up the token, activate the account, clear the token</pre>
+
+      <h3>Sessions and staying logged in</h3>
+      <p class="note">Once a user is verified and logged in, the backend creates a <strong>session</strong> — a record that this user is authenticated. A session ID gets sent back to the frontend as a <strong>cookie</strong>, which the browser stores and sends automatically on every subsequent request.</p>
+      <p class="note">This is what the <code class="ic">connect.sid</code> value was in Insomnia — the session cookie. When you saw authorization values in the Insomnia headers during the backend code-alongs, that was the session being passed back to prove the user was still logged in.</p>
+      <pre class="cb">// On successful sign in, Express creates a session
+request.session.profile = { profileId: profile.id, profileName: profile.name }
+
+// isLoggedInController — middleware on every protected route
+export function isLoggedInController(request, response, next) {
+  if (!request.session.profile) {
+    return response.json({ status: 401, message: 'You must be logged in', data: null })
+  }
+  next()  // session exists — continue to the actual controller
+}</pre>
+    </div>
+
+    <div class="concept-card">
+      <h3>The full sign-up flow end to end</h3>
+      <ol class="nl">
+        <li>User fills out sign-up form on frontend (React Router 7 Form)</li>
+        <li>Action function sends POST request to backend with form data in JSON body</li>
+        <li>Express routes request to signUpController</li>
+        <li>Zod validates the incoming data against ProfileSchema</li>
+        <li>If invalid → return 400 error, don't touch the database</li>
+        <li>If valid → hash the password with argon2</li>
+        <li>Generate a 32-character activation token</li>
+        <li>INSERT new profile row into PostgreSQL (hashed password, token, email)</li>
+        <li>Send activation email via Mailgun with token in the link</li>
+        <li>Return success response to frontend</li>
+        <li>User clicks email link → activation token verified → account active</li>
+        <li>User can now sign in</li>
+      </ol>
+      <p class="note">This is why sign-up was one of the most complex code-alongs in the bootcamp — it touches Zod, argon2, PostgreSQL, an external email service, and React Router all in one feature.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SECTION 4 — Git Branching Workflow -->
+  <!-- ============================================================ -->
+  <section class="ref-section" id="git">
+    <div class="ref-header">
+      <span class="ref-number">04</span>
+      <h2>Git Branching Workflow</h2>
+    </div>
+
+    <div class="concept-card">
+      <h3>Why branching exists</h3>
+      <p class="note">Without branching, everyone on the team is working on the same code at the same time. One person pushes a half-finished feature and suddenly nobody's code runs. Branching gives each person their own isolated copy of the codebase to work in. The work stays separate until it's ready to be combined.</p>
+      <p class="note">The rule from the bootcamp: <strong>only merge when the code works.</strong></p>
+
+      <h4>The branch structure used on Wanderlist</h4>
+      <pre class="cb">main
+  └── develop
+        ├── community-integration (Eric)
+        ├── post-integration
+        ├── sign-up-form
+        └── wanderlist-integration (Srilatha)</pre>
+      <ul class="nl">
+        <li><strong>main</strong> — the production branch. Only merge into main when the whole team agrees the code is stable.</li>
+        <li><strong>develop</strong> — the shared working branch. Feature branches get merged into develop first.</li>
+        <li><strong>feature branches</strong> — where the actual daily work happens. Each person or feature gets its own branch off of develop.</li>
+      </ul>
+    </div>
+
+    <div class="concept-card">
+      <h3>The daily git workflow</h3>
+      <pre class="cb">git checkout main
+git pull
+git checkout develop
+git pull
+git checkout -b your-feature-branch   # -b flag creates a new branch
+
+# do your work...
+
+git add .
+git commit -m 'describe what you did'
+git push origin your-feature-branch
+
+# then on GitHub: create a pull request to merge into develop</pre>
+
+      <h4>Quick reference — commands used most</h4>
+      <pre class="cb">git checkout main              # switch to main branch
+git pull                       # pull latest from remote
+git checkout -b feature-name   # create and switch to new branch
+git add .                      # stage all changes
+git commit -m 'message'        # commit with a message
+git push origin feature-name   # push branch to GitHub
+git merge develop              # bring develop into your current branch
+git checkout develop           # switch to develop
+docker compose down -v         # wipe containers and volumes
+docker compose up              # rebuild and restart</pre>
+    </div>
+
+    <div class="concept-card">
+      <h3>Where things went wrong — merge conflicts</h3>
+      <p class="note">A merge conflict happens when two people edited the same file, in the same area, and git can't figure out which version to keep. It's not a bug — it's git asking "I see two different versions of this line, which one is correct?"</p>
+      <p class="note">On Wanderlist this came up when feature branches diverged from develop for too long. The longer a branch lives without pulling in updates from develop, the more it drifts — and the more painful the merge becomes.</p>
+      <pre class="cb"># Pull from develop into your feature branch regularly
+git checkout develop
+git pull
+git checkout your-feature-branch
+git merge develop
+
+# When a conflict occurs, git marks it in the file:
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+your version of the code
+=======
+your teammate's version of the code
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; develop
+
+# Manually pick which version to keep, delete the markers, then:
+git add .
+git commit</pre>
+
+      <h4>Habits that reduce merge conflicts</h4>
+      <ul class="nl">
+        <li><strong>Communicate before merging to develop</strong> — a quick Slack message "merging dashboard now" gives teammates a heads up</li>
+        <li><strong>Small, frequent merges</strong> — merging one finished feature at a time is easier to untangle than one giant merge at the end of a sprint</li>
+        <li><strong>Pull develop into your branch before you start each day</strong> — you find out early if something conflicts rather than discovering it right before a deadline</li>
+        <li><strong>Never force push to develop or main</strong> — force pushing rewrites history and can overwrite a teammate's work silently</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SECTION 5 — JavaScript Methods and Function Syntax -->
+  <!-- ============================================================ -->
+  <section class="ref-section" id="javascript">
+    <div class="ref-header">
+      <span class="ref-number">05</span>
+      <h2>JavaScript Methods and Function Syntax</h2>
+    </div>
+
+    <div class="concept-card">
+      <h3>Functions — the building blocks of everything</h3>
+      <p class="note">A function is a reusable block of code that does a specific job. You define it once and call it whenever you need it. In the bootcamp we used a few different ways to write them, and they all do the same thing — just with different syntax.</p>
+      <pre class="cb">// Function declaration
+function greet(name) {
+  return 'Hello, ' + name
+}
+
+// Function expression — storing a function in a variable
+const greet = function(name) {
+  return 'Hello, ' + name
+}
+
+// Arrow function — the shorthand version we used most in React
+const greet = (name) => {
+  return 'Hello, ' + name
+}
+
+// Arrow function — even shorter when it's just one line
+const greet = (name) => 'Hello, ' + name</pre>
+      <p class="note">The parts of a function: the <strong>name</strong> tells you what it does, the <strong>parameters</strong> are the inputs it expects (called arguments when you actually pass values in), the <strong>body</strong> is the code inside the curly brackets, and the <strong>return value</strong> is what it hands back when it's done.</p>
+    </div>
+
+    <div class="concept-card">
+      <h3>Higher-Order Functions — map, filter, reduce</h3>
+      <p class="note">These are array methods that take a function as an argument and run it on each item in the array. George and Marty used the food analogy to introduce these — map cooks the food, filter picks what you want, reduce consumes it all into one thing.</p>
+
+      <h4>.map() — transform every item, get a new array back</h4>
+      <p class="note">Use this when you want to do something to every item and keep all of them.</p>
+      <pre class="cb">const numbers = [1, 2, 3, 4]
+const doubled = numbers.map((num) => num * 2)
+// doubled = [2, 4, 6, 8]
+
+// In React this is how we render lists:
+const pizzas = ['Cheese', 'Pepperoni', 'Supreme']
+return (
+  &lt;ul&gt;
+    {pizzas.map((pizza) =&gt; (
+      &lt;li key={pizza}&gt;{pizza}&lt;/li&gt;
+    ))}
+  &lt;/ul&gt;
+)</pre>
+
+      <h4>.filter() — keep only the items that pass a test</h4>
+      <pre class="cb">const numbers = [1, 2, 3, 4, 5, 6]
+const evens = numbers.filter((num) => num % 2 === 0)
+// evens = [2, 4, 6]</pre>
+
+      <h4>.reduce() — collapse the whole array into one value</h4>
+      <pre class="cb">const numbers = [1, 2, 3, 4]
+const total = numbers.reduce((acc, num) => acc + num, 0)
+// total = 10
+// The 0 at the end is the starting value of the accumulator</pre>
+
+      <h4>Chaining — combining methods together</h4>
+      <pre class="cb">const numbers = [1, 2, 3, 4, 5, 6]
+
+const result = numbers
+  .filter((num) => num % 2 === 0)   // keep evens: [2, 4, 6]
+  .map((num) => num * 10)            // multiply: [20, 40, 60]
+  .reduce((acc, num) => acc + num, 0) // sum: 120</pre>
+    </div>
+
+    <div class="concept-card">
+      <h3>Action and Loader functions in React Router 7</h3>
+      <p class="note">These are specific to React Router 7 (what we used in Wanderlist). They replaced the old way of fetching and submitting data.</p>
+
+      <h4>loader — runs before the page loads</h4>
+      <p class="note">Its job is to fetch data and hand it to the component. Think of it as the setup crew — it gets everything ready before the curtain goes up.</p>
+      <pre class="cb">export async function loader({ request }) {
+  const response = await fetch(`${process.env.REST_API_URL}/wanderlist`, {
+    headers: { Cookie: request.headers.get('Cookie') ?? '' }
+  })
+  const body = await response.json()
+  return body.data
+}
+
+export default function WanderlistPage() {
+  const wanderlist = useLoaderData()
+  return (
+    &lt;ul&gt;
+      {wanderlist.map((item) =&gt; (
+        &lt;li key={item.wanderlistId}&gt;{item.wanderlistTitle}&lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  )
+}</pre>
+
+      <h4>action — runs when a form is submitted</h4>
+      <pre class="cb">export async function action({ request }) {
+  const formData = await request.formData()
+  const title = formData.get('wanderlistTitle')
+  await fetch(`${process.env.REST_API_URL}/wanderlist`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json',
+                Cookie: request.headers.get('Cookie') ?? '' },
+    body: JSON.stringify({ wanderlistTitle: title })
+  })
+  return redirect('/wanderlist')
+}
+
+export default function NewWanderlistPage() {
+  return (
+    &lt;Form method='post'&gt;
+      &lt;input name='wanderlistTitle' type='text' /&gt;
+      &lt;button type='submit'&gt;Add to Wanderlist&lt;/button&gt;
+    &lt;/Form&gt;
+  )
+}</pre>
+      <p class="note">The rule of thumb from the bootcamp: <strong>loader for reading data, action for writing data.</strong></p>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SECTION 6 — TypeScript and Zod -->
+  <!-- ============================================================ -->
+  <section class="ref-section" id="typescript-zod">
+    <div class="ref-header">
+      <span class="ref-number">06</span>
+      <h2>TypeScript and Zod</h2>
+    </div>
+
+    <div class="concept-card">
+      <h3>What TypeScript is and why we used it</h3>
+      <p class="note">JavaScript is flexible — maybe too flexible. You can pass a number where a function expects a string and JavaScript won't stop you. TypeScript adds a layer on top of JavaScript that catches those mistakes before the code ever runs.</p>
+      <p class="note">TypeScript is a <strong>superset</strong> of JavaScript — meaning all valid JavaScript is also valid TypeScript. You're not learning a new language, you're adding a safety layer. At the end of the day the TypeScript compiler converts everything back to plain JavaScript. The browser never sees TypeScript directly.</p>
+      <p class="note">In the bootcamp we wrote <code class="ic">.ts</code> files for backend logic and <code class="ic">.tsx</code> files for React components. The <code class="ic">x</code> in <code class="ic">.tsx</code> just means "this TypeScript file also contains JSX."</p>
+
+      <h4>Types — telling your code what to expect</h4>
+      <pre class="cb">// Basic types
+let profileName: string = 'Eric'
+let age: number = 44
+let isLoggedIn: boolean = false
+
+// TypeScript infers the type if you assign immediately
+let city = 'Albuquerque'  // TypeScript already knows this is a string
+
+// Function parameters — TypeScript will catch wrong types at write time
+function getProfileById(id: string) {
+  // if you pass a number, TypeScript flags it before runtime
+}</pre>
+
+      <h4>Custom types and the type keyword</h4>
+      <pre class="cb">export type Pizza = {
+  image: string
+  name: string
+}
+
+// Now everywhere Pizza is used, TypeScript knows exactly what it should look like
+const pizzas: Pizza[] = [
+  { image: 'cheese.jpg', name: 'Cheese' },
+  { image: 'pepperoni.jpg', name: 'Pepperoni' }
+]
+// Pizza[] syntax means "an array of Pizza objects"</pre>
+
+      <h4>Type Props — passing typed data into React components</h4>
+      <pre class="cb">type ProfileCardProps = {
+  profileName: string
+  bio: string
+  imageUrl: string
+}
+
+export function ProfileCard({ profileName, bio, imageUrl }: ProfileCardProps) {
+  return (
+    &lt;div&gt;
+      &lt;img src={imageUrl} alt={profileName} /&gt;
+      &lt;h2&gt;{profileName}&lt;/h2&gt;
+      &lt;p&gt;{bio}&lt;/p&gt;
+    &lt;/div&gt;
+  )
+}</pre>
+    </div>
+
+    <div class="concept-card">
+      <h3>What Zod is</h3>
+      <p class="note">TypeScript is a compile-time safety tool — it catches type errors while you're writing code. But once data arrives from the outside world — a form submission, an API request, user input — TypeScript can't verify it. That data is unknown until it arrives at runtime.</p>
+      <p class="note">Zod is a <strong>runtime validation library</strong>. Where TypeScript says "this should be a string," Zod says "let me actually check that this is a string right now, while the app is running, and tell you clearly if it isn't."</p>
+      <p class="note">In the Wanderlist backend, every piece of incoming data passed through a Zod schema before it touched the database. This is the security layer Marty introduced as the Fundamental Theorem of User Input — never trust data coming in from outside your app.</p>
+
+      <h4>Zod schemas — defining the shape of incoming data</h4>
+      <pre class="cb">import { z } from 'zod'
+
+export const ProfileSchema = z.object({
+  profileName: z.string().min(1).max(48),
+  profileEmail: z.string().email(),
+  password: z.string().min(8),
+  profileAboutMe: z.string().max(256).nullable()
+})
+
+// z.infer generates a TypeScript type from the schema — no duplication needed
+export type Profile = z.infer&lt;typeof ProfileSchema&gt;</pre>
+
+      <h4>safeParse — checking data in the controller</h4>
+      <pre class="cb">export async function postSignUpController(request: Request, response: Response) {
+  // Check the incoming data against the schema
+  const validation = ProfileSchema.safeParse(request.body)
+
+  // If it doesn't match, send back a clear error — don't touch the database
+  if (!validation.success) {
+    return response.json({ status: 400, message: validation.error.errors, data: null })
+  }
+
+  // Data passed validation — safe to use
+  const { profileName, profileEmail, password } = validation.data
+  // ... continue to hash password, insert into database, etc.
+}</pre>
+
+      <h4>.pick() and .omit() — reusing schemas</h4>
+      <pre class="cb">// Full schema defined once
+export const ProfileSchema = z.object({
+  profileName: z.string(),
+  profileEmail: z.string().email(),
+  password: z.string(),
+  profileAboutMe: z.string().nullable()
+})
+
+// Sign-in only needs these two — pick pulls them out
+export const SignInSchema = ProfileSchema.pick({
+  profileEmail: true,
+  password: true
+})
+
+// Sign-up needs everything except aboutMe — omit removes it
+export const SignUpSchema = ProfileSchema.omit({
+  profileAboutMe: true
+})</pre>
+    </div>
+
+    <div class="concept-card">
+      <h3>How TypeScript and Zod work together</h3>
+      <p class="note">They complement each other rather than overlap:</p>
+      <table class="st">
+        <thead><tr><th>Tool</th><th>When it runs</th><th>What it catches</th></tr></thead>
+        <tbody>
+          <tr><td>TypeScript</td><td>Compile time (while writing code)</td><td>Wrong types passed between functions, missing properties, typos in property names</td></tr>
+          <tr><td>Zod</td><td>Runtime (while app is running)</td><td>Bad data from forms, API requests, user input — anything from outside your app</td></tr>
+        </tbody>
+      </table>
+      <p class="note">TypeScript makes sure your teammates pass the right types when calling your functions. Zod makes sure the outside world — forms, API requests, user input — sends data your app can actually use. Together they form the two-layer validation approach that ran through the entire Wanderlist backend.</p>
+    </div>
+  </section>
+
+</div><!-- end .container -->
+</body>
+</html>
